@@ -6,6 +6,9 @@ import ScrollAnimation from 'react-animate-on-scroll';
 const Services = styled(({className}) => {
   return(
       <div className={className}>
+        <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
+          <h2 className="cards-header">PROGRAMES</h2>
+        </ScrollAnimation>
         <div className="card-section">
           <ScrollAnimation animateOnce={true} duration={0.5} animateIn="fadeInRight">
             <Card image="card-1" title="FOOD OUTREACH">
@@ -34,7 +37,7 @@ const Services = styled(({className}) => {
         </div>
         <div className="support">
           <h2>SUPPORT THE GOOD WORK </h2>
-          <Button label="DONATE" />
+          <Button label="MAKE A DONATION" />
         </div>
       </div>
   )
@@ -42,7 +45,12 @@ const Services = styled(({className}) => {
 
 width:100vw;
 padding:100px 0;
-
+color:${({theme})=> theme.colors.primary};
+.cards-header {
+  font-size:2.3em;
+  text-align:center;
+  padding-bottom:50px;
+}
 .card-section {
   display:flex;
   justify-content:space-around;

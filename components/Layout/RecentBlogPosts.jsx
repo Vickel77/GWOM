@@ -82,6 +82,9 @@ const RecentBlogPosts = styled(({className})=>{
   ]
   return(
     <div className={className}>
+      <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
+        <h2 className="blog-header">RECENT BLOG POSTS</h2>
+      </ScrollAnimation>
       {
         posts.map((post)=>{
          return (
@@ -93,6 +96,12 @@ const RecentBlogPosts = styled(({className})=>{
   )
 })`
   margin-bottom:100px;
+  .blog-header {
+    padding-bottom:50px;
+    color:${({theme})=>theme.colors.primary};
+    text-align:center;
+    font-size:2.3em;
+  }
 
 `
 

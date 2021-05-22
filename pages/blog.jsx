@@ -8,12 +8,18 @@ const Blog = styled(({className})=>{
       <Head>
       </Head>
       <Layout>
-        <h1>BLOG</h1>
+        <div className={className}>
+          <h1>Blog</h1>
+        </div>
       </Layout>
     </>
   )
 })`
-
+margin:100px 0;
+color:${({theme})=>theme.colors.primary};
+h1 {
+  text-align:center;
+}
 `
 
 export default Blog;

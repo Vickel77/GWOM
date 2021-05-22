@@ -11,17 +11,22 @@ const Nav = styled(({className, hideNav}) =>{
     <div className={className}>
       <div className="cancel" onClick={hideNav}>X</div>
       <div className="nav">
-        <div className="nav-item">
+        <div className="nav-item" onClick={hideNav}>
+          <Link href="/">
+            HOME
+          </Link>
+        </div>
+        <div className="nav-item" onClick={hideNav}>
           <Link href="/about">
             ABOUT
           </Link>
         </div>
-        <div className="nav-item">
+        <div className="nav-item" onClick={hideNav}>
           <Link href="/blog">
             BLOG
           </Link>
         </div>
-        <div className="nav-item">
+        <div className="nav-item" onClick={hideNav}>
           <Link href="/partner">
             PARTNER WITH US
           </Link>
@@ -33,7 +38,7 @@ const Nav = styled(({className, hideNav}) =>{
 height:100vh;
 width:18%;
 background:rgba(255,255,255,.5);
-position:absolute;
+position:fixed;
 right:0;
 top:0;
 z-index:500;
@@ -41,6 +46,7 @@ padding-top:100px;
 color:white;
 animation: animate-nav 1s ;
 transform-origin:100%;
+
 &:before {
   content:"";
   position:absolute;
@@ -59,8 +65,8 @@ transform-origin:100%;
 }
 .cancel {
   position:absolute;
-  right:30px;
-  top:15px;
+  right:20px;
+  top:20px;
   font-size:1.3em;
 }
 .cancel:hover {
@@ -69,13 +75,24 @@ transform-origin:100%;
   cursor:pointer;
 }
 .nav{
-  height:25vh;
-  width:100%;
+  height:30vh;
   display:flex;
   flex-flow:column wrap;
   align-items:center;
   justify-content:space-around;
+  
+}
+.nav-item {
   animation:animate-navcontent 1.5s;
+}
+.nav-item:nth-child(2) {
+  animation:animate-navcontent 1.7s;
+}
+.nav-item:nth-child(3) {
+  animation:animate-navcontent 1.9s;
+}
+.nav-item:nth-child(4) {
+  animation:animate-navcontent 2.1s;
 }
 @keyframes animate-navcontent {
   from,50%{opacity:0;}
@@ -90,13 +107,12 @@ transform-origin:100%;
   opacity:.5;
   position:relative
 }
-
 @media (max-width:600px){
   width:100%;
-  &:before {
-    width:100%;
-  }
+  background: rgba(255,255,255,1);
+  &:before {width:95%;}
 }
+
 `
 
 const NavBar = styled(({className}) => {
@@ -126,7 +142,7 @@ const NavBar = styled(({className}) => {
 })`
   .navigation {
     z-index:111111;
-    position:absolute;
+    position:fixed;
     top:0;
     height:60px;
     width:100vw;
@@ -137,13 +153,12 @@ const NavBar = styled(({className}) => {
     color: ${({theme})=>theme.colors.white};
   }
 .scrolled {
-  position:fixed;
   background:#7B03A3aa;
-  animation:animate-nav .3s;
+  animation:animate-scrolled-nav .3s;
 }
-@keyframes animate-nav {
-  from{transform: translateY(-20px); opacity:0;}
-  to{transform: translateY(0px); opacity:1;}
+@keyframes animate-scrolled-nav {
+  from{background:transparent;}
+  to{background:#7B03A3aa;}
 } 
 .buttons {
   width:200px;
@@ -156,7 +171,7 @@ const NavBar = styled(({className}) => {
   .navigation {
     padding:0 10px;
   }
-  .navigation * {  transform:scale(.9);}
+  .navigation .logo, .navigation .buttons {  transform:scale(.9);}
   .buttons {
     width:150px;
   }

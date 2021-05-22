@@ -2,13 +2,14 @@ import {ThemeProvider, createGlobalStyle} from "styled-components";
 import theme from "../lib/utils/theme";
 
 const GlobalStyles = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
 html,
 body {
   background:${({theme})=>theme.background};
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family:Raleway;
   overflow-x:hidden;
 }
 
@@ -18,6 +19,7 @@ body {
 h1,h2,h3,h4,h5 {
   padding:0;
   margin:0;
+  font-family:Raleway;
 }
 a,
 a:hover,

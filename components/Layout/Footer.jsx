@@ -8,6 +8,11 @@ const Footer = styled(({className})=>{
         <div className="footer-nav">
           <h2>USEFUL LINKS</h2>
           <div className="nav-item">
+            <Link href="/">
+              HOME
+            </Link>
+          </div>
+          <div className="nav-item">
             <Link href="/about">
               ABOUT
             </Link>

@@ -11,8 +11,10 @@ const AboutSnippet = styled(({className})=>{
       <div className="about-right">
         <ScrollAnimation animateOnce={true} duration={0.8} animateIn="fadeIn">
           <div className="about-text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia minima libero excepturi nobis, impedit dicta laboriosam, culpa tempore facere corrupti obcaecati quae, adipisci porro reiciendis officia corporis necessitatibus nam perspiciatis! Facilis alias placeat, natus deserunt minus libero dignissimos! Assumenda hic totam aut sunt molestiae rem itaque eligendi eius quo a.
-          <Button label="SEE MORE" />
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia minima libero excepturi nobis, impedit dicta laboriosam, culpa tempore facere corrupti obcaecati quae, adipisci porro reiciendis officia corporis necessitatibus nam perspiciatis! Facilis alias placeat, natus deserunt minus libero dignissimos! Assumenda hic totam aut sunt molestiae rem itaque eligendi eius quo a.
+            </p>
+            <Button label="SEE MORE" />
           </div>
         </ScrollAnimation>
       </div>
@@ -42,9 +44,6 @@ const AboutSnippet = styled(({className})=>{
     width:80%;
     margin: 0 auto;
     line-height:1.5;
-  }
-  .about-text > * {
-    margin-top:20px;
   }
 
   @media(max-width:600px){

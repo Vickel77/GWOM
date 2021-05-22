@@ -10,7 +10,11 @@ const Partner = styled(({className})=>{
     </Layout>
   )
 })`
-
+margin:100px 0;
+color:${({theme})=>theme.colors.primary};
+h1 {
+  text-align:center;
+}
 `
 
 export default Partner;

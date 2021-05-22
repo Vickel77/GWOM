@@ -18,7 +18,13 @@ height:450px;
 min-width:328px;
 width:328px;
 border-radius:15px 0 0 0;
+&:hover .card-image{
+  background-size: 110% 110%;
+  transition:.3s ease-out;
+}
 .card-image {
+  border-radius:15px 0 15px 0;
+  overflow:hidden;
   background:url("${(props)=>props.image}.png");
   background-size:100% 100%;
   height:266px;
