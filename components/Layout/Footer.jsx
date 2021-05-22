@@ -35,7 +35,7 @@ const Footer = styled(({className})=>{
         </div>
       </div>
       <div className="copyright">
-        <p>gwom copyright all rights reserved 2021 &copy</p>
+        <p>gwom all rights reserved &copy;copyright 2021 </p>
       </div>
     </div>
   )
