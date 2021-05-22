@@ -131,6 +131,11 @@ const NavBar = styled(({className}) => {
               <img src="./logo-white.png" alt="logo-img" />}
           </Link>
         </div>
+        <div className="logo-m">
+          <Link href="/">
+            <img src="./logo-white.png" alt="logo-img" />
+          </Link>
+        </div>
         <div className="buttons">
           <Button white label="DONATE"/>
           <Menu onClick={()=>setShowNav(!showNav)} />
@@ -152,6 +157,12 @@ const NavBar = styled(({className}) => {
     align-items:center;
     color: ${({theme})=>theme.colors.white};
   }
+  .logo{
+    display:block;
+  }
+  .logo-m {
+    display:none;
+  }
 .scrolled {
   background:#7B03A3aa;
   animation:animate-scrolled-nav .3s;
@@ -171,12 +182,18 @@ const NavBar = styled(({className}) => {
   .navigation {
     padding:0 10px;
   }
-  .navigation .logo, .navigation .buttons {  transform:scale(.9);}
+  .logo{
+    display:none;
+  }
+  .logo-m {
+    display:block;
+  }
+  .navigation .logo, .navigation .buttons {  
+    transform:scale(.9);
+    padding-top:5px;
+  }
   .buttons {
     width:150px;
-  }
-  .scrolled {
-    height:40px;
   }
 }
 `
