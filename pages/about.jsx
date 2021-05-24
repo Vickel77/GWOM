@@ -1,16 +1,17 @@
 import styled from "styled-components";
+import AltHeader from "../components/AltHeader/AltHeader";
 import {Layout} from "../components/Layout"
 
 const About = styled(({className})=>{
   return(
     <Layout>
       <div className={className}>
-        <h1> About Page...</h1>
+        <AltHeader title="ABOUT"/>
       </div>
     </Layout>
   )
 })`
-  margin:100px 0;
+  margin-bottom:100px;
   color:${({theme})=>theme.colors.primary};
   h1 {
     text-align:center;

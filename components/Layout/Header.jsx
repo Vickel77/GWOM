@@ -12,7 +12,7 @@ const Header = styled(({className}) =>{
     </header>
   )
 })`
-background:url("girl-2.jpg");
+background:url("header-bg.jpg");
 background-size:cover;
 background-position:50% 70%;
 height:100vh;
@@ -88,7 +88,7 @@ align-items:center;
 }
 
 @media (max-width:600px){
-  background:-webkit-linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.5)),url("girl-2.jpg");
+  background:-webkit-linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.5)),url("header-bg.jpg");
   height:80vh;
   padding-top: 100px;
   display:block;

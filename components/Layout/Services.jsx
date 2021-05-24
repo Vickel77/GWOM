@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import ScrollAnimation from 'react-animate-on-scroll';
+import Link from "next/link";
 import Button from "../Button";
 import Card from "../Card";
-import ScrollAnimation from 'react-animate-on-scroll';
+
 
 const Services = styled(({className}) => {
   return(
@@ -37,7 +39,11 @@ const Services = styled(({className}) => {
         </div>
         <div className="support">
           <h2>SUPPORT THE GOOD WORK </h2>
-          <Button label="MAKE A DONATION" />
+          <Link href="/partner">
+            <a>
+              <Button label="BECOME A PARTNER" />
+            </a>
+          </Link>
         </div>
       </div>
   )

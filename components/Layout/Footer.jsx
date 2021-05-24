@@ -42,7 +42,7 @@ const Footer = styled(({className})=>{
 })`
   height:50vh;
   width:100%;
-  background: #7B03A3;
+  background: ${({theme})=>theme.colors.primary};
   background-size:cover;
   color:white;
   line-height:2;

@@ -31,6 +31,11 @@ const Nav = styled(({className, hideNav}) =>{
             PARTNER WITH US
           </Link>
         </div>
+        <Link href="/donate" onClick={hideNav}>
+          <a>
+            <Button white label="MAKE A DONATION" />
+          </a>
+        </Link>
       </div>
     </div>
   )
@@ -44,7 +49,7 @@ top:0;
 z-index:500;
 padding-top:100px;
 color:white;
-animation: animate-nav 1s ;
+animation: animate-nav .65s ;
 transform-origin:100%;
 
 &:before {
@@ -57,7 +62,7 @@ transform-origin:100%;
   background:${({theme})=>theme.colors.primary};
   z-index:-111;
   transform-origin:100%;
-  animation:animate-nav 1.3s;
+  animation:animate-nav .75s;
 }
 @keyframes animate-nav {
   from{transform:scale(0,1)}
@@ -75,7 +80,7 @@ transform-origin:100%;
   cursor:pointer;
 }
 .nav{
-  height:30vh;
+  height:40vh;
   display:flex;
   flex-flow:column wrap;
   align-items:center;
@@ -83,16 +88,26 @@ transform-origin:100%;
   
 }
 .nav-item {
-  animation:animate-navcontent 1.5s;
+  animation:animate-navcontent .8s;
+  width:70%;
+  padding:10px 0;
+  text-align:center;
 }
+.nav-item:hover {
+  transition:.3s;
+  cursor:pointer;
+  opacity:.5;
+}
+
+
 .nav-item:nth-child(2) {
-  animation:animate-navcontent 1.7s;
+  animation:animate-navcontent 1s;
 }
 .nav-item:nth-child(3) {
-  animation:animate-navcontent 1.9s;
+  animation:animate-navcontent 1.2s;
 }
 .nav-item:nth-child(4) {
-  animation:animate-navcontent 2.1s;
+  animation:animate-navcontent 1.4s;
 }
 @keyframes animate-navcontent {
   from,50%{opacity:0;}
@@ -102,11 +117,7 @@ transform-origin:100%;
   color:${({theme})=>theme.colors.white};
   
 }
-.nav-item:hover {
-  transition:.2s;
-  opacity:.5;
-  position:relative
-}
+
 @media (max-width:600px){
   width:100%;
   background: rgba(255,255,255,1);
@@ -137,7 +148,11 @@ const NavBar = styled(({className}) => {
           </Link>
         </div>
         <div className="buttons">
-          <Button white label="DONATE"/>
+          <Link href="/donate">
+            <a>
+              <Button white label="DONATE"/>
+            </a>
+          </Link>
           <Menu onClick={()=>setShowNav(!showNav)} />
         </div>
         {showNav && <Nav hideNav={()=>setShowNav(false)} />}
@@ -164,12 +179,13 @@ const NavBar = styled(({className}) => {
     display:none;
   }
 .scrolled {
-  background:#7B03A3aa;
+  background:${({theme})=>theme.colors.primary};
   animation:animate-scrolled-nav .3s;
+  box-shadow:0 2px 5px rgba(0,0,0,.3);
 }
 @keyframes animate-scrolled-nav {
   from{background:transparent;}
-  to{background:#7B03A3aa;}
+  to{background:${({theme})=>theme.colors.primary};}
 } 
 .buttons {
   width:200px;

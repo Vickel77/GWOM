@@ -18,23 +18,34 @@ const Button = styled(({className, label}) => {
     color: ${({theme})=>theme.colors.primary};
     cursor:pointer;
   }
-  ${(props)=> props.white &&`
-    background: white;
-    color: #7B03A3;
+  ${({white, theme})=> white &&`
+    background: ${theme.colors.white};
+    color: ${theme.colors.primary};
     &:hover {
-      background: #7B03A3;
-      color: white;
+      background: ${theme.colors.primary};
+      color: ${theme.colors.white};
     }
   `}
 
-  ${(props)=> props.outline &&`
+  ${({outline, theme})=> outline &&`
     background: transparent;
-    border: 1px solid #7B03A3;
-    color: #7B03A3;
+    border: 1px solid ${theme.colors.primary};
+    color: ${theme.colors.primary};
     &:hover {
-      border: 1px solid #7B03A3;
-      background: #7B03A3;
-      color: white;
+      border: 1px solid ${theme.colors.white};
+      background: ${theme.colors.primary};
+      color: ${theme.colors.white};
+    }
+  `}
+
+  ${({outlineWhite, theme})=> outlineWhite &&`
+    background: transparent;
+    border: 1px solid ${theme.colors.white};
+    color: ${theme.colors.white};
+    &:hover {
+      border: 1px solid ${theme.colors.white};
+      background: ${theme.colors.white};
+      color: ${theme.colors.primary};
     }
   `}
 

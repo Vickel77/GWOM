@@ -2,11 +2,23 @@ import styled from "styled-components";
 import Button from "../Button";
 import ScrollAnimation from 'react-animate-on-scroll';
 
+const AboutHeader = ({letter}) =>{
+  return(
+    <ScrollAnimation animateOnce={true} duration={0.5} animateIn="fadeIn">
+      <h2>{letter}</h2>
+    </ScrollAnimation>
+  )
+}
+
 const AboutSnippet = styled(({className})=>{
   return(
     <div className={className}>
       <div className="about-left">
-
+        <AboutHeader letter="A" />
+        <AboutHeader letter="B" />
+        <AboutHeader letter="O" />
+        <AboutHeader letter="U" />
+        <AboutHeader letter="T" />
       </div>
       <div className="about-right">
         <ScrollAnimation animateOnce={true} duration={0.8} animateIn="fadeIn">
@@ -28,8 +40,16 @@ const AboutSnippet = styled(({className})=>{
   .about-left {
     height:inherit;
     width:18%;
-    background:url('about-left.jpg');
-    background-size:100% 100%;
+    background:${({theme})=>theme.colors.primary};
+    color:${({theme})=>theme.colors.white};
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content:space-around;
+    align-items:center;
+    padding:30px 0;
+  }
+  .about-left h2 {
+    font-size:2em;
   }
   .about-right {
     height:inherit;
@@ -46,11 +66,7 @@ const AboutSnippet = styled(({className})=>{
     line-height:1.5;
   }
 
-  @media(max-width:600px){
-    .about-left {
-      background:url("about-left-m.png");
-    }
-  }
+
 `
 
 export default AboutSnippet;
