@@ -9,7 +9,7 @@ const Partner = styled(({className})=>{
         <AltHeader title="BECOME A PARTNER" />
         <div className="partner-wrap">
           <div className="partner-text">
-          Start impacting lives massively by becoming a parnter today at GWOM 
+          Start impacting lives massively by becoming a partner today at GWOM 
           please fill the form below, so we can reach out you and introduce you to the rest of the family.    
           </div>
           <div className="partner-form">
@@ -64,11 +64,23 @@ h1 {
     color:${({theme})=>theme.colors.white};
     box-shadow: 0 2px 5px rgba(0,0,0,.5);
   }
-  input::placeholder {color:${({theme})=>theme.colors.primary};}
+  input::placeholder {
+    color:${({theme})=>theme.colors.primary};
+    opacity:.5;}
   input[type="submit"]:active {
     box-shadow: 0 0px 2px rgba(0,0,0,.5);
   }
+}
 
+@media (max-width:600px){
+  .partner-wrap {
+    margin:100px auto;
+    width:90%;
+    .partner-text {
+      margin:0 auto;
+      width:80%;
+    }
+  }
 }
 `
 

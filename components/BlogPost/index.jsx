@@ -62,6 +62,10 @@ const BlogPost = styled(({className, title, snippet})=>{
       background:white;
     }
   }
+
+  @media (max-width:600px){
+    width:90%;
+  }
 `
 
 export default BlogPost;

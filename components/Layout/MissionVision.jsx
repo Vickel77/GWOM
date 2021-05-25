@@ -48,7 +48,6 @@ const MissionVision = styled(({className})=>{
     }
 
   .mission {
-    background-color:${({theme})=>theme.colors.white};
     color:${({theme})=>theme.colors.primary};
   }
   .vision {

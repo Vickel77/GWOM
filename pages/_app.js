@@ -1,9 +1,7 @@
 import {ThemeProvider, createGlobalStyle} from "styled-components";
 import theme from "../lib/utils/theme";
-
+import Head from "next/head"
 const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
-
 html,
 body {
   background:${({theme})=>theme.background};
@@ -34,6 +32,14 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <Head>
+        <title>GWOM</title>
+        <meta name="description" content="Great women on Mission" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"/>
+      </Head>
       <Component {...pageProps} />
     </ThemeProvider>
   )

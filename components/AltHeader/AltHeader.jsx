@@ -24,7 +24,14 @@ background:${({bgImage, theme}) => bgImage? `url(${bgImage})`: theme.colors.prim
 .title {
   font-size:2.5em;
   .subTitle {
-    font-size:2.2em;
+    font-weight:normal;
+    font-size:0.5em;
+  }
+}
+
+@media (max-width:600px){
+  .title {
+    font-size:2em;
   }
 }
 `

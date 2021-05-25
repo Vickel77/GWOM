@@ -6,7 +6,7 @@ const About = styled(({className})=>{
   return(
     <Layout>
       <div className={className}>
-        <AltHeader title="ABOUT"/>
+        <AltHeader title="ABOUT" subTitle="This Page is still under development..." />
       </div>
     </Layout>
   )
