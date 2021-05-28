@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 import Button from "../Button";
 import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -26,7 +27,11 @@ const AboutSnippet = styled(({className})=>{
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia minima libero excepturi nobis, impedit dicta laboriosam, culpa tempore facere corrupti obcaecati quae, adipisci porro reiciendis officia corporis necessitatibus nam perspiciatis! Facilis alias placeat, natus deserunt minus libero dignissimos! Assumenda hic totam aut sunt molestiae rem itaque eligendi eius quo a.
             </p>
-            <Button label="SEE MORE" />
+            <Link href="/about">
+              <a>
+                <Button label="SEE MORE" />
+              </a>
+            </Link>
           </div>
         </ScrollAnimation>
       </div>
