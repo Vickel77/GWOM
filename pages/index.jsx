@@ -16,7 +16,7 @@ const Home = () =>{
           <MissionVision />
           <Services />
           <RecentBlogPosts />
-          {/* <Gallery /> */}
+          <Gallery />
         </Layout>
       </main>
     </div>

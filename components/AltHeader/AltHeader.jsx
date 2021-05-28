@@ -14,7 +14,7 @@ const AltHeader = styled(({className, title, subTitle})=>{
   )
 })`
 width:100vw;
-height:40vh;
+height:30vh;
 color:${({theme})=>theme.colors.white};
 display:flex;
 justify-content:center;

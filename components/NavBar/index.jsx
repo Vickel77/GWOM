@@ -175,6 +175,9 @@ const NavBar = styled(({className}) => {
   .logo{
     display:block;
   }
+  .logo:hover {
+    cursor:pointer;
+  }
   .logo-m {
     display:none;
   }
