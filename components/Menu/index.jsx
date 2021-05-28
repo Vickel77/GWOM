@@ -6,12 +6,15 @@ const Menu = styled(({className, onClick}) =>{
       <div className="bar" />
       <div className="bar" />
       <div className="bar" />
+      {/* <div className="bar" /> */}
     </div>
   )
 })`
 height:15px;
+width:20px;
 display:flex;
 flex-flow:column wrap;
+align-items:center;
 justify-content:space-between;
 &:hover {
   cursor:pointer;
@@ -24,7 +27,7 @@ justify-content:space-between;
 }
 .bar {
   background:magenta;
-  height:3px;
+  height:2px;
   width:20px;
   position:relative;
   transition:.2s;
@@ -36,7 +39,7 @@ justify-content:space-between;
   top:0;
   left:0;
   width:15px;
-  height:3px;
+  height:2px;
   transition:.5s;
 }
 

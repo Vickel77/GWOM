@@ -1,4 +1,5 @@
 import {ThemeProvider, createGlobalStyle} from "styled-components";
+import SnackbarProvider from "react-simple-snackbar";
 import theme from "../lib/utils/theme";
 import Head from "next/head"
 const GlobalStyles = createGlobalStyle`
@@ -40,7 +41,9 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"/>
       </Head>
-      <Component {...pageProps} />
+      <SnackbarProvider>
+        <Component {...pageProps} />
+      </SnackbarProvider>
     </ThemeProvider>
   )
 }

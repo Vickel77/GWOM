@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ScrollAnimation from 'react-animate-on-scroll';
 import Button from "../Button";
 
-const BlogPost = styled(({className, title, snippet})=>{
+const BlogPost = styled(({className, title, body})=>{
   return(
     <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeInUp">
       <div className={className}>
@@ -11,7 +11,7 @@ const BlogPost = styled(({className, title, snippet})=>{
               <h2>{title}</h2>
             </div>
             <div className="post-snippet">
-              <p>{snippet}</p>
+              <p>{body}</p>
             </div>
             <Button outline label="VIEW MORE" />
           </div>

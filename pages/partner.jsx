@@ -1,8 +1,21 @@
 import styled from "styled-components";
 import AltHeader from "../components/AltHeader/AltHeader";
 import {Layout} from "../components/Layout"
+import emailjs from "emailjs-com";
+import useSnackbar from "../hooks/useSnackBar";
 
 const Partner = styled(({className})=>{
+  const { showSuccess, showError } = useSnackbar();
+  
+  const handleMail = (e) =>{
+    e.preventDefault();
+    emailjs.sendForm("service_77tupvc", "template_lqh64le", e.target, "user_7CH6RLoLJaqirqM7Yf60C")
+      .then(result=>{
+        showSuccess("Thank you for Partnering! \n we'll get across to you shortly")
+        })
+      .catch(error=>showError(error))
+    e.target.reset();
+  }
   return(
     <Layout>
       <div className={className}>
@@ -13,7 +26,7 @@ const Partner = styled(({className})=>{
           please fill the form below, so we can reach out you and introduce you to the rest of the family.    
           </div>
           <div className="partner-form">
-            <form action="#" method="GET">
+            <form action="#" method="GET" onSubmit={handleMail}>
               <label htmlFor="name">NAME</label>
               <input type="text" name="name" placeholder="Name" required/>
               <label htmlFor="email">EMAIL</label>

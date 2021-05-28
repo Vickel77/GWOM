@@ -9,31 +9,31 @@ const Blog = styled(({ className }) => {
     {
       id: 1,
       title: "THE MANGROOVE OUTREACH",
-      snippet:
+      body:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
     },
     {
       id: 2,
       title: "GIVING FOOD",
-      snippet:
+      body:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium. Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
     },
     {
       id: 3,
       title: "WE CAME AGAIN",
-      snippet:
+      body:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
     },
     {
       id: 4,
       title: "HELPING GIRLS",
-      snippet:
+      body:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
     },
     {
       id: 5,
       title: "THE SCHOLARSHIP PROGRAM",
-      snippet:
+      body:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium. Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
     },
   ];
@@ -49,7 +49,7 @@ const Blog = styled(({ className }) => {
                 <BlogPost
                   key={post.id}
                   title={post.title}
-                  snippet={post.snippet}
+                  body={post.body}
                 />
               );
             })}
