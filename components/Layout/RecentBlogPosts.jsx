@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import BlogPost from "../BlogPost"
 import ScrollAnimation from 'react-animate-on-scroll';
-import posts from "../../pages/blog/Posts"
 
 
 const RecentBlogPosts = styled(({className})=>{
