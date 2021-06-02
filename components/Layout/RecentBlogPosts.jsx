@@ -1,7 +1,8 @@
+import {useState, useEffect} from "react"
 import styled from "styled-components";
-import BlogPost from "../BlogPost"
+import axios from "axios";
 import ScrollAnimation from 'react-animate-on-scroll';
-
+import BlogPost from "../BlogPost"
 
 const RecentBlogPosts = styled(({className})=>{
   const [blogPost, setBlogPost] = useState([]);
@@ -24,12 +25,8 @@ const RecentBlogPosts = styled(({className})=>{
       <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
         <h2 className="blog-header">RECENT BLOG POSTS</h2>
       </ScrollAnimation>
-      {blogPosts && 
+      {blogPost && 
         blogPost.slice(0, 3).map((post, idx)=>{
-          // let body = post.body.split("")
-          // if(body.length > 0){
-          //   `${body.length = 30}...`;
-          // }
          return (
           <BlogPost key={idx} title={post.title} body={reduceString(post.body)} />
          )
