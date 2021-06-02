@@ -59,6 +59,8 @@ box-shadow:0 2px 5px rgba(0,0,0,.15);
   justify-content:center;
   align-items:center;
   color:${({theme})=>theme.colors.primary};
+  line-height:1.5em;
+  word-spacing:.2em;
 }
 @media (max-width:600px){
   margin-bottom:20px;

@@ -25,7 +25,7 @@ const AboutSnippet = styled(({className})=>{
         <ScrollAnimation animateOnce={true} duration={0.8} animateIn="fadeIn">
           <div className="about-text">
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia minima libero excepturi nobis, impedit dicta laboriosam, culpa tempore facere corrupti obcaecati quae, adipisci porro reiciendis officia corporis necessitatibus nam perspiciatis! Facilis alias placeat, natus deserunt minus libero dignissimos! Assumenda hic totam aut sunt molestiae rem itaque eligendi eius quo a.
+              Content in Progress...
             </p>
             <Link href="/about">
               <a>

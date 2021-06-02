@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import ScrollAnimation from 'react-animate-on-scroll';
 import Button from "../Button";
+import Link from "next/link";
 
-const BlogPost = styled(({className, title, body})=>{
+const BlogPost = styled(({className, title, body, onBlogPage})=>{
   return(
     <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeInUp">
       <div className={className}>
@@ -13,14 +14,21 @@ const BlogPost = styled(({className, title, body})=>{
             <div className="post-snippet">
               <p>{body}</p>
             </div>
-            <Button outline label="VIEW MORE" />
+            {
+              !onBlogPage &&
+              <Link href="/blog">
+                <a>
+                  <Button outline label="VISIT BLOG" />
+                </a>
+              </Link>
+            }
           </div>
       </div>
     </ScrollAnimation>
   )
 })`
   width:80%;
-  margin:0 auto 50px;
+  margin:0 auto 100px;
   padding: 0 30px 30px; 
   background:${({theme})=>theme.colors.primary};
   color:${({theme})=>theme.colors.primary};
@@ -43,8 +51,9 @@ const BlogPost = styled(({className, title, body})=>{
   
   .post{
     .post-title {
-      padding:25px 0;
+      padding:35px 0;
       position:relative;
+      margin-bottom:30px;
     }
     .post-title:before{
       content:"";
@@ -58,7 +67,10 @@ const BlogPost = styled(({className, title, body})=>{
     }
 
     .post-snippet {
-      line-height:1.4em;
+      line-height:2em;
+      word-spacing:.2em;
+      word-break:break-word;
+      text-align:justify;
       background:white;
     }
   }
