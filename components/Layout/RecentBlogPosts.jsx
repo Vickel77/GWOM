@@ -4,6 +4,17 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 
 const RecentBlogPosts = styled(({className})=>{
+  const [blogPost, setBlogPost] = useState([]);
+  useEffect(async () => {
+    await axios
+      .get("https://polar-peak-99687.herokuapp.com/blog")
+      .then(({ data }) => {
+        setBlogPost(data);
+        console.log("data", data);
+        setLoading(false)
+      })
+      .catch((error) => console.log(error));
+  }, []);
   const reduceString = (body) => {
     let newArray = body.split("", 200).concat("...");
       return newArray;
@@ -13,8 +24,8 @@ const RecentBlogPosts = styled(({className})=>{
       <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
         <h2 className="blog-header">RECENT BLOG POSTS</h2>
       </ScrollAnimation>
-      {
-        posts.slice(0, 3).map((post, idx)=>{
+      {blogPosts && 
+        blogPost.slice(0, 3).map((post, idx)=>{
           // let body = post.body.split("")
           // if(body.length > 0){
           //   `${body.length = 30}...`;
