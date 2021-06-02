@@ -3,40 +3,22 @@ import styled from "styled-components";
 import AltHeader from "../../components/AltHeader/AltHeader";
 import { Layout } from "../../components/Layout";
 import BlogPost from "../../components/BlogPost";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const Blog = styled(({ className }) => {
-  const posts = [
-    {
-      id: 1,
-      title: "THE MANGROOVE OUTREACH",
-      body:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
-    },
-    {
-      id: 2,
-      title: "GIVING FOOD",
-      body:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium. Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
-    },
-    {
-      id: 3,
-      title: "WE CAME AGAIN",
-      body:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
-    },
-    {
-      id: 4,
-      title: "HELPING GIRLS",
-      body:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
-    },
-    {
-      id: 5,
-      title: "THE SCHOLARSHIP PROGRAM",
-      body:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium. Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
-    },
-  ];
+  const [blogPost, setBlogPost] = useState([]);
+  const [loading, setLoading] = useState(true)
+  useEffect(async () => {
+    await axios
+      .get("https://polar-peak-99687.herokuapp.com/blog")
+      .then(({ data }) => {
+        setBlogPost(data);
+        console.log("data", data);
+        setLoading(false)
+      })
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <>
       <Head></Head>
@@ -44,15 +26,15 @@ const Blog = styled(({ className }) => {
         <div className={className}>
           <AltHeader title="GWOM BLOG" />
           <div className="posts">
-            {posts.map((post) => {
-              return (
-                <BlogPost
-                  key={post.id}
-                  title={post.title}
-                  body={post.body}
-                />
-              );
-            })}
+            <h3 align="center">
+              {
+                loading && "loading Posts..."
+              }
+            </h3>
+            {blogPost &&
+              blogPost.map(({ title, body }, idx) => {
+                return <BlogPost key={idx} title={title} body={body} onBlogPage />;
+              })}
           </div>
         </div>
       </Layout>
@@ -60,9 +42,8 @@ const Blog = styled(({ className }) => {
   );
 })`
   & {
-    
     .posts {
-      margin:100px auto;
+      margin: 100px auto;
       color: ${({ theme }) => theme.colors.primary};
     }
   }

@@ -69,6 +69,7 @@ h1 {
     outline:none;
     border-radius:5px;
     color:${({theme})=>theme.colors.primary};
+    resize:none;
   }
   input[type="submit"] {font-weight: bold;}
   input[type="submit"]:hover {

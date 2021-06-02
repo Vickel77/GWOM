@@ -1,35 +1,27 @@
 import styled from "styled-components";
 import BlogPost from "../BlogPost"
 import ScrollAnimation from 'react-animate-on-scroll';
+import posts from "../../pages/blog/Posts"
 
 
 const RecentBlogPosts = styled(({className})=>{
-  const posts = [
-    {
-      id: 1,
-      title:"THE MANGROOVE OUTREACH",
-      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
-    },
-    {
-      id: 2,
-      title:"GIVING FOOD",
-      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium. Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
-    },
-    {
-      id: 3,
-      title:"WE CAME AGAIN",
-      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit Deserunt est facilis voluptatibus dicta reiciendis pariatur officia dolorum temporibus inventore dolores itaque asperiores aliquid laudantium.",
-    }
-  ]
+  const reduceString = (body) => {
+    let newArray = body.split("", 200).concat("...");
+      return newArray;
+  }
   return(
     <div className={className}>
       <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
         <h2 className="blog-header">RECENT BLOG POSTS</h2>
       </ScrollAnimation>
       {
-        posts.map((post)=>{
+        posts.slice(0, 3).map((post, idx)=>{
+          // let body = post.body.split("")
+          // if(body.length > 0){
+          //   `${body.length = 30}...`;
+          // }
          return (
-          <BlogPost key={post.id} title={post.title} body={post.body} />
+          <BlogPost key={idx} title={post.title} body={reduceString(post.body)} />
          )
         })
       }
