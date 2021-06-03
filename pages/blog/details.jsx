@@ -11,7 +11,7 @@ const Details = styled(({className, id})=>{
   const [blogPost, setBlogPost] = useState([]);
   const [loading, setLoading] = useState(true)
   const ID = Object.keys(router.query)
-  console.log("query param", ID);
+  console.log("query param", Object.keys(router.query));
   useEffect(async () => {
     await axios
       .get(`https://polar-peak-99687.herokuapp.com/blog/${ID}`)
@@ -29,7 +29,7 @@ const Details = styled(({className, id})=>{
         <AltHeader title="GWOM BLOG" />
           <div className="post">
             {loading ? <p>loading...</p> :
-              <BlogPost title={blogPost.title} body={blogPost.body} onBlogPage/>
+              <BlogPost title={blogPost.title} body={blogPost.body} postButton="remove"/>
             }
           </div>
       </div>

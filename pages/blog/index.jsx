@@ -50,9 +50,12 @@ const Blog = styled(({ className }) => {
               {blogPost &&
                 blogPost.map(({ _id, title, body }, idx) => {
                   return (
-                    <a key={idx} onClick={()=>handleRoute(_id)}>
-                      <BlogPost id={_id} title={title} onBlogPage />
-                    </a>
+                      <BlogPost 
+                        keys={_id}
+                        id={_id} 
+                        title={title} 
+                        postButton
+                        handleRoute={()=>handleRoute(_id)} />
                   )
                 })}
           </div> 

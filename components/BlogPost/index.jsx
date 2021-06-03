@@ -3,7 +3,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import Button from "../Button";
 import Link from "next/link";
 
-const BlogPost = styled(({className, title, body, onBlogPage})=>{
+const BlogPost = styled(({className, title, body, postButton, handleRoute})=>{
   return(
     <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeInUp">
       <div className={className}>
@@ -15,13 +15,17 @@ const BlogPost = styled(({className, title, body, onBlogPage})=>{
               <p>{body}</p>
             </div>
             {
-              !onBlogPage &&
+              !postButton ?
               <Link href="/blog">
                 <a>
                   <Button outline label="VISIT BLOG" />
                 </a>
-              </Link>
+              </Link>: postButton=="remove" ?
+              <></> : <a onClick={handleRoute}>
+                <Button outline label="VIEW MORE" />
+              </a>
             }
+            
           </div>
       </div>
     </ScrollAnimation>
