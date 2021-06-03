@@ -4,6 +4,7 @@
 /components/AdminForm
 # blog admin (work in progress)
 /pages/blog/admin.jsx
+
 /pages/api/base.js
 
 # dependencies

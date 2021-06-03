@@ -2,14 +2,19 @@ import Head from "next/head";
 import styled from "styled-components";
 import AltHeader from "../../components/AltHeader/AltHeader";
 import { Layout } from "../../components/Layout";
-import BlogPost from "../../components/BlogPost";
+import Link from "next/link"
+import {useRouter} from "next/router"
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import BlogPost from "../../components/BlogPost";
 
 const Blog = styled(({ className }) => {
   const [blogPost, setBlogPost] = useState([]);
   const [loading, setLoading] = useState(true)
+  const [postId, setPostId] = useState();
+  const router = useRouter();
   useEffect(async () => {
+    setPostId();
     await axios
       .get("https://polar-peak-99687.herokuapp.com/blog")
       .then(({ data }) => {
@@ -19,6 +24,17 @@ const Blog = styled(({ className }) => {
       })
       .catch((error) => console.log(error));
   }, []);
+  const reduceString = (body) => {
+    let newArray = body.split("", 100).concat("...");
+      return newArray;
+  }
+  const handleRoute =(id)=>{
+    router.push(`/blog/details?${id}`, undefined, {
+      shallow: true,
+    });
+    setPostId(id);
+  }
+  const ID = !!router.query.ID || false;
   return (
     <>
       <Head></Head>
@@ -26,16 +42,20 @@ const Blog = styled(({ className }) => {
         <div className={className}>
           <AltHeader title="GWOM BLOG" />
           <div className="posts">
-            <h3 align="center">
-              {
-                loading && "loading Posts..."
-              }
-            </h3>
-            {blogPost &&
-              blogPost.map(({ title, body }, idx) => {
-                return <BlogPost key={idx} title={title} body={body} onBlogPage />;
-              })}
-          </div>
+              <h3 align="center">
+                {
+                  loading && "loading Posts..."
+                }
+              </h3>
+              {blogPost &&
+                blogPost.map(({ _id, title, body }, idx) => {
+                  return (
+                    <a key={idx} onClick={()=>handleRoute(_id)}>
+                      <BlogPost id={_id} title={title} onBlogPage />
+                    </a>
+                  )
+                })}
+          </div> 
         </div>
       </Layout>
     </>
@@ -43,8 +63,11 @@ const Blog = styled(({ className }) => {
 })`
   & {
     .posts {
-      margin: 100px auto;
+      margin: 50px auto;
       color: ${({ theme }) => theme.colors.primary};
+      ${BlogPost} {
+        margin-bottom: 25px;
+      }
     }
   }
 `;

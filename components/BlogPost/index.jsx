@@ -28,8 +28,8 @@ const BlogPost = styled(({className, title, body, onBlogPage})=>{
   )
 })`
   width:80%;
-  margin:0 auto 100px;
-  padding: 0 30px 30px; 
+  margin:0 auto 50px;
+  padding: 0 20px 10px; 
   background:${({theme})=>theme.colors.primary};
   color:${({theme})=>theme.colors.primary};
   text-align:left;
@@ -51,7 +51,7 @@ const BlogPost = styled(({className, title, body, onBlogPage})=>{
   
   .post{
     .post-title {
-      padding:35px 0;
+      padding:15px 0;
       position:relative;
       margin-bottom:30px;
     }

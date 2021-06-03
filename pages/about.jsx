@@ -70,9 +70,9 @@ const About = styled(({className})=>{
               <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
                 <p>
                 Great Women on a Mission began before it even began. It is a Non-Governmental
-                  Organization formed by its owner… (Insert name if necessary here) who came from very
+                  Organization formed by its owner: <b>Mrs Gloria Okoroigwe</b>  who came from very
                   impoverished backgrounds and despite all odds, rose to become something and do great things
-                  with her life.
+                  with her life.<br />
                   It looked like the drizzle turned into a rain right about the time she finished her Primary
                   Education and coming to the harsh reality that there would not be enough to further her
                   Education, even to the Secondary Level, she went ahead to serve as a Maid for several years.
@@ -84,10 +84,10 @@ const About = styled(({className})=>{
                   General Certification Examinations (GCE). Reluctant to do so due to a lack of Secondary
                   Education, she eventually obliged having been informed that the examinations could be written
                   even without said level of education and registered for a brief training to aid her adequately
-                  prepare for the examinations.
+                  prepare for the examinations.<br />
                   It would seem as though the examinations were the beginning of her good fortune for, after
                   passing the GCE, she went on to apply to study in the University of Calabar where she graduated
-                  with a degreex in… (insert what her degree was in here)
+                  with a degree in… (insert what her degree was in here)
                   One would say that after graduating from University, she could to some extent thrive on
                   her own. However, the Heavens would prove they were not done with her when a church
                   member and fellow grew affectionate toward her and presented her to her son; the son she
@@ -196,6 +196,9 @@ const About = styled(({className})=>{
       margin:20px 0;
       width:200px;
       height:200px;
+    }
+    .founder-story-text  {
+      width:70%;
     }
   }
 `

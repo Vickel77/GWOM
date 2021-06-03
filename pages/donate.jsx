@@ -6,7 +6,7 @@ import { PayPalButton } from "react-paypal-button-v2";
 import useSnackbar from "../hooks/useSnackBar";
 
 const Donate = styled(({className})=>{
-  const {showSuccess} = useSnackbar
+  const {showSuccess, showError} = useSnackbar
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const addPaypalScript =(details, data) =>{
     console.log(details);
@@ -26,10 +26,12 @@ const Donate = styled(({className})=>{
   },[])
 
   const onSuccess = (details, data)=>{
-    console.log(details)
     showSuccess("Donation Successful!");
   }
-  const onError = ()=> console.log(details);
+  const onError = (error)=> {
+    showError("Donation no successful")
+    console.log(error)
+  };
   return(
     <Layout>
       <div className={className}>
