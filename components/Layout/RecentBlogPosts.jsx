@@ -8,7 +8,7 @@ const RecentBlogPosts = styled(({className})=>{
   const [blogPost, setBlogPost] = useState([]);
   useEffect(async () => {
     await axios
-      .get("https://polar-peak-99687.herokuapp.com/blog")
+      .get(`https://polar-peak-99687.herokuapp.com/blog/`)
       .then(({ data }) => {
         setBlogPost(data);
         console.log("data", data);

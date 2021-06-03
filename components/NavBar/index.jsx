@@ -138,13 +138,13 @@ const NavBar = styled(({className}) => {
         <div className="logo">
           <Link href="/">
             {!scrolled ? 
-              <img src="./logo.png" alt="logo-img" />:
-              <img src="./logo-white.png" alt="logo-img" />}
+              <img src="../logo.png" alt="logo-img" />:
+              <img src="../logo-white.png" alt="logo-img" />}
           </Link>
         </div>
         <div className="logo-m">
           <Link href="/">
-            <img src="./logo-white.png" alt="logo-img" />
+            <img src="../logo-white.png" alt="logo-img" />
           </Link>
         </div>
         <div className="buttons">

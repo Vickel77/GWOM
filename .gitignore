@@ -5,8 +5,6 @@
 # blog admin (work in progress)
 /pages/blog/admin.jsx
 
-/pages/blog/posts.jsx
-
 /pages/api/base.js
 
 # dependencies
