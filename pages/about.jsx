@@ -37,7 +37,10 @@ const About = styled(({className})=>{
             <img width="450px" src="about-img.jpg" alt="about image of great women on a mission" />
           </div>
           <div className="about-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolor sequi aspernatur quaerat magni nihil quis animi voluptate, voluptatibus, nemo aperiam doloribus et recusandae perspiciatis distinctio laudantium expedita iusto adipisci sunt, voluptates veritatis! Earum in praesentium doloribus ut repellendus beatae enim quis molestiae nesciunt et? Fugit autem debitis doloribus ipsum ad nulla, pariatur delectus dolores mollitia deleniti assumenda illo odit praesentium beatae porro eum facere culpa! Repellendus, maxime soluta quis alias dolorum asperiores labore, adipisci deleniti harum rerum non, quas odio id minus totam magnam voluptas quos. Ipsum mollitia id esse perspiciatis repudiandae quia facere, neque nihil voluptas praesentium dolores provident illo qui quasi commodi, sapiente porro animi ratione dolorum possimus et vel illum quam. Molestias reiciendis veniam fugit accusantium optio alias corrupti voluptatum adipisci neque libero? Nobis consequuntur temporibus sunt iste vitae ducimus nostrum corporis odio quisquam maxime numquam tempore eos exercitationem nam cupiditate voluptates modi quasi, maiores iusto necessitatibus. Quisquam in voluptate voluptas fugiat. Eaque quia ab illum tempore assumenda qui itaque placeat expedita. Aperiam et excepturi porro, fuga illo reiciendis repellendus voluptate quam quas labore consectetur ad itaque quidem iusto autem molestiae dolores iste ullam iure hic, sapiente sequi culpa pariatur. Explicabo saepe eveniet nulla aperiam, quasi veniam magni voluptate. Consequatur, atque. Ex obcaecati voluptas ab impedit saepe commodi.
+            Great women on the mission is a Non-Governmental Organization made up of respectful, responsible adn compassionate
+            stewwards ever ready to meet needs of less priviledged youn girls and women through philantropic services amon many others.<br/> <br/>
+            We are a group of people who through consistencyy, creativity, quick problem solving adn ideation, will ensyre that the girl
+            child is given adequate representation adn treatment in every sphere of life.
           </div>
         </div>
         <div className="core-values">

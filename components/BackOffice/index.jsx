@@ -4,7 +4,8 @@ import useSnackbar from "../../hooks/useSnackBar";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import BlogPost from "../BlogPost"
-
+import base from "../../pages/api/base";
+import {AuthContext} from "../../context/Auth"
 
 const BackOffice = styled(({className})=>{
   const [blogPost, setBlogPost] = useState([]);
@@ -66,10 +67,11 @@ const BackOffice = styled(({className})=>{
         console.log(res);  
         console.log(res.data);  
         const posts = blogPost.filter(item => item.id !== id);  
-        setBlogPost(posts)
+        setBlogPost([...posts])
+        setLoading(true);
       })  
   }
-
+  
   const reduceString = (body) => {
     let newArray = body.split("", 200).concat("...");
       return newArray;
@@ -80,6 +82,7 @@ const BackOffice = styled(({className})=>{
           <Link href="/blog">
             <a>Return to blog</a>
           </Link>
+          <a onClick={()=>base.auth().signOut()}>Sign out</a>
         </div>
         <h1>CREATE BLOG POST</h1>
         <div className="admin-form">
@@ -96,7 +99,7 @@ const BackOffice = styled(({className})=>{
         <div className="posts">
           {loading && <h3>Loading...</h3>}
           {blogPost && 
-            blogPost.map((post, idx)=>{
+            blogPost.sort( function ( a, b ) { return b._id - a._id; } ).map((post, idx)=>{
             return (
               <BlogPost key={idx} title={post.title} deletePost={()=>handleDelete(post._id)} body={reduceString(post.body)} />
             )
@@ -107,20 +110,29 @@ const BackOffice = styled(({className})=>{
   )
 })`
 width:50%;
-margin:50px auto 0;
+margin:0 auto;
 text-align:center;
 color:${({theme})=>theme.colors.primary};
+.return {
+  width:100%;
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content:space-between;
+  margin: 20px auto 30px;
+}
 .return a {
-  position:absolute;
-  top:20px;
-  left:30px;
+  font-size:.7em;
   padding:10px;
   color:${({theme})=>theme.colors.primary};
   border:1px solid ${({theme})=>theme.colors.primary};
 }
+.return a:active {
+  background:${({theme})=>theme.colors.primary};
+  color:${({theme})=>theme.colors.white};
+}
 .admin-form {
   border:1px solid ${({theme})=>theme.colors.primary};
-  margin-top:50px;
+  margin-top: 20px;
   padding:30px 20px;
   box-shadow:0 2px 15px rgba(0,0,0,.15);
   input,textarea {
@@ -150,11 +162,11 @@ color:${({theme})=>theme.colors.primary};
   }
 }
 .posts {
-  margin:100px 0;
+  margin:100px auto;
 }
 
 @media (max-width:600px){
-  margin:100px auto;
+  margin:0px auto;
   width:90%;
 }
 `
