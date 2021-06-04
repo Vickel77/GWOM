@@ -25,7 +25,8 @@ const AboutSnippet = styled(({className})=>{
         <ScrollAnimation animateOnce={true} duration={0.8} animateIn="fadeIn">
           <div className="about-text">
             <p>
-              Content in Progress...
+              Great women on the mission is a Non-Governmental Organization made up of respectful, responsible and compassionate
+              stewards ever ready to meet needs of less priviledged young girls and women through philanthropic services among many others.
             </p>
             <Link href="/about">
               <a>
