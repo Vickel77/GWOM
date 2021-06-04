@@ -2,7 +2,7 @@ import {
   Layout, 
   Header, 
   MissionVision, 
-  Services, 
+  Programes, 
   AboutSnippet, 
   RecentBlogPosts,
   Gallery} from "../components/Layout";
@@ -14,7 +14,7 @@ const Home = () =>{
           <Header />
           <AboutSnippet />
           <MissionVision />
-          <Services />
+          <Programes />
           <RecentBlogPosts />
           <Gallery />
         </Layout>

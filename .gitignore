@@ -3,7 +3,8 @@
 /components/zion
 /components/AdminForm
 # blog admin (work in progress)
-/pages/blog/admin.jsx
+
+/pages/blog/admine.jsx
 
 /pages/api/base.js
 

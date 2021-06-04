@@ -5,7 +5,7 @@ import Button from "../Button";
 import Card from "../Card";
 
 
-const Services = styled(({className}) => {
+const Programes = styled(({className}) => {
   return(
       <div className={className}>
         <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
@@ -14,26 +14,17 @@ const Services = styled(({className}) => {
         <div className="card-section">
           <ScrollAnimation animateOnce={true} duration={0.5} animateIn="fadeInRight">
             <Card image="card-1" title="FOOD OUTREACH">
-              We carryout outreaches
-              where we distribute food
-              and food items to women 
-              in need
+              We Carryout regular outreaches where large amount of food is distributed to impoverished girls and their families
             </Card>
           </ScrollAnimation>
           <ScrollAnimation animateOnce={true} duration={0.8} animateIn="fadeInRight">
-            <Card image="card-2" title="WELFARE GIFTINGS">
-              We carryout outreaches
-              where we distribute food
-              and food items to women 
-              in need
+            <Card image="card-2" title="WELFARE">
+              We also cater for the welfare and overall wellbeing of a many girls as our capacity can carry, 
             </Card>
           </ScrollAnimation>
           <ScrollAnimation animateOnce={true} duration={1.1} animateIn="fadeInRight">
-            <Card image="card-3" title="HELPING HANDS">
-              We carryout outreaches
-              where we distribute food
-              and food items to women 
-              in need
+            <Card image="card-3" title="FEMININE EDUCATION">
+              Education about the female gender to those who have poor enlightenements and beliefs that may not be helpful to them
             </Card>
           </ScrollAnimation>
         </div>
@@ -78,4 +69,4 @@ color:${({theme})=> theme.colors.primary};
 }
 `
 
-export default Services;
+export default Programes;

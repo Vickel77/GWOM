@@ -13,18 +13,18 @@ const BlogPost = styled(({className, title, body, postButton, handleRoute})=>{
             </div>
             <div className="post-snippet">
               <p>{body}</p>
-            </div>
-            {
-              !postButton ?
-              <Link href="/blog">
-                <a>
-                  <Button outline label="VISIT BLOG" />
+              {
+                !postButton ?
+                <Link href="/blog">
+                  <a>
+                    <Button outline label="VISIT BLOG" />
+                  </a>
+                </Link>: postButton=="remove" ?
+                <></> : <a onClick={handleRoute}>
+                  <Button outline label="VIEW MORE" />
                 </a>
-              </Link>: postButton=="remove" ?
-              <></> : <a onClick={handleRoute}>
-                <Button outline label="VIEW MORE" />
-              </a>
-            }
+              }
+            </div>
             
           </div>
       </div>
@@ -33,9 +33,8 @@ const BlogPost = styled(({className, title, body, postButton, handleRoute})=>{
 })`
   width:80%;
   margin:0 auto 50px;
-  padding: 0 20px 10px; 
-  background:${({theme})=>theme.colors.primary};
   color:${({theme})=>theme.colors.primary};
+  background:${({theme})=>theme.colors.primary};
   text-align:left;
   z-index:11;
   position:relative;
@@ -55,19 +54,10 @@ const BlogPost = styled(({className, title, body, postButton, handleRoute})=>{
   
   .post{
     .post-title {
-      padding:15px 0;
+      width:100%;
+      padding: 15px 20px 10px; 
       position:relative;
       margin-bottom:30px;
-    }
-    .post-title:before{
-      content:"";
-      position:absolute;
-      bottom:0;
-      left:0;
-      height:3px;
-      width:15px;
-      background:${({theme})=>theme.colors.primary};
-
     }
 
     .post-snippet {
@@ -76,6 +66,8 @@ const BlogPost = styled(({className, title, body, postButton, handleRoute})=>{
       word-break:break-word;
       text-align:justify;
       background:white;
+      padding: 0px 20px 10px; 
+      
     }
   }
 

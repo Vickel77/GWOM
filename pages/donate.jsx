@@ -18,6 +18,7 @@ const Donate = styled(({className})=>{
     script.src = "https://www.paypal.com/sdk/js?client-id=AYq18QpUidxeJ1Je8FKDM91rYloZ8RbMFan2Hu4hQApjLDBotnWah0iOAVuLhdtAOCzqTeeAltjNqM3i"
     script.type = "text/javascript";
     script.onload = () => setScriptLoaded(true);
+    script.onunload = () => setScriptLoaded(false)
     script.async = true;
     document.body.appendChild(script);
   }
