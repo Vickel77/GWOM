@@ -59,6 +59,17 @@ const BackOffice = styled(({className})=>{
     e.target.reset();
     
   }
+
+  const handleDelete =(id, e)=>{
+    axios.delete(`https://polar-peak-99687.herokuapp.com/blog/${id}`)  
+      .then(res => {  
+        console.log(res);  
+        console.log(res.data);  
+        const posts = blogPost.filter(item => item.id !== id);  
+        setBlogPost(posts)
+      })  
+  }
+
   const reduceString = (body) => {
     let newArray = body.split("", 200).concat("...");
       return newArray;
@@ -87,7 +98,7 @@ const BackOffice = styled(({className})=>{
           {blogPost && 
             blogPost.map((post, idx)=>{
             return (
-              <BlogPost key={idx} title={post.title} body={reduceString(post.body)} />
+              <BlogPost key={idx} title={post.title} deletePost={()=>handleDelete(post._id)} body={reduceString(post.body)} />
             )
             })
           }

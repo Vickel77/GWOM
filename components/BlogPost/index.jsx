@@ -3,7 +3,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import Button from "../Button";
 import Link from "next/link";
 
-const BlogPost = styled(({className, title, body, postButton, handleRoute})=>{
+const BlogPost = styled(({className, title, body, postButton, handleRoute, deletePost})=>{
   return(
     <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeInUp">
       <div className={className}>
@@ -13,17 +13,28 @@ const BlogPost = styled(({className, title, body, postButton, handleRoute})=>{
             </div>
             <div className="post-snippet">
               <p>{body}</p>
-              {
-                !postButton ?
-                <Link href="/blog">
-                  <a>
-                    <Button outline label="VISIT BLOG" />
-                  </a>
-                </Link>: postButton=="remove" ?
-                <></> : <a onClick={handleRoute}>
-                  <Button outline label="VIEW MORE" />
-                </a>
-              }
+              <div className="actions">
+                {
+                    !postButton ?
+                    <Link href="/blog">
+                      <a>
+                        <Button outline label="VISIT BLOG" />
+                      </a>
+                    </Link> : 
+                    postButton=="remove" ?
+                    <></> : 
+                    <a onClick={handleRoute}>
+                      <Button outline label="VIEW MORE" />
+                    </a> 
+                }
+                {
+                    deletePost &&
+                    <a onClick={deletePost}>
+                      <Button label ="DELETE POST" />
+                    </a>
+                }
+              </div>
+              
             </div>
             
           </div>
@@ -68,6 +79,12 @@ const BlogPost = styled(({className, title, body, postButton, handleRoute})=>{
       background:white;
       padding: 0px 20px 10px; 
       
+    }
+    .actions {
+      width:100%;
+      display:flex;
+      flex-flow:row nowrap;
+      justify-content:space-between;
     }
   }
 
