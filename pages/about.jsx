@@ -69,10 +69,9 @@ const About = styled(({className})=>{
             <div className="founder-story-text">
               <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
                 <p>
-                Great Women on a Mission began before it even began. It is a Non-Governmental
-                  Organization formed by its owner: <b>Mrs Gloria Okoroigwe</b>  who came from very
-                  impoverished backgrounds and despite all odds, rose to become something and do great things
-                  with her life.<br />
+                <b>Mrs Gloria Okoroigwe</b> who despite the odds accompannied with coming from a very humble background,
+                  by grace and committment to possibilities of a great future has risen to become a woman of repute and today posits her
+                  life to placate her <b>GREAT WOMEN ON A MISSION</b> humanitarian establishment.<br />
                   It looked like the drizzle turned into a rain right about the time she finished her Primary
                   Education and coming to the harsh reality that there would not be enough to further her
                   Education, even to the Secondary Level, she went ahead to serve as a Maid for several years.

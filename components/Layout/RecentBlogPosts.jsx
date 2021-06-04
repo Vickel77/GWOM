@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react"
+import {useState, useEffect} from "react";
 import styled from "styled-components";
 import axios from "axios";
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -12,7 +12,6 @@ const RecentBlogPosts = styled(({className})=>{
       .then(({ data }) => {
         setBlogPost(data);
         console.log("data", data);
-        setLoading(false)
       })
       .catch((error) => console.log(error));
   }, []);

@@ -51,7 +51,7 @@ const Blog = styled(({ className }) => {
                 blogPost.map(({ _id, title, body }, idx) => {
                   return (
                       <BlogPost 
-                        keys={_id}
+                        key={_id}
                         id={_id} 
                         title={title} 
                         postButton
