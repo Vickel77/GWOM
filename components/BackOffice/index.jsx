@@ -20,7 +20,6 @@ const BackOffice = styled(({className})=>{
         .get(`https://polar-peak-99687.herokuapp.com/blog/`)
         .then(({ data }) => {
           setBlogPost(data);
-          console.log("data", data);
           setLoading(false)
         })
         .catch((error) => console.log(error)),
@@ -63,9 +62,7 @@ const BackOffice = styled(({className})=>{
 
   const handleDelete =(id, e)=>{
     axios.delete(`https://polar-peak-99687.herokuapp.com/blog/${id}`)  
-      .then(res => {  
-        console.log(res);  
-        console.log(res.data);  
+      .then(result => {  
         const posts = blogPost.filter(item => item.id !== id);  
         setBlogPost([...posts])
         setLoading(true);

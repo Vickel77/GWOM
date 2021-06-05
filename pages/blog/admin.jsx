@@ -17,9 +17,10 @@ const admin = styled(({className})=>{
       .auth()
         .signInWithEmailAndPassword(email, password)
       base.auth().onAuthStateChanged(setHasAccount)
+      setErrorMessage(false)
       } catch (error){
         console.log(error);
-        setErrorMessage(error)
+        setErrorMessage(true)
       }
 
     e.target.reset();
@@ -30,6 +31,7 @@ const admin = styled(({className})=>{
       {!hasAccount ?
         <div className="login">
           <form action="" className="form" onSubmit={handleLogin}>
+            <h2>ADMIN LOGIN</h2>
             {
               errorMessage && <p className="errorMessage">The detials you entered were incorrect, please try again</p>
             }
@@ -47,13 +49,15 @@ const admin = styled(({className})=>{
 })`
   .login {
     background:${({theme})=>theme.colors.primary};
+    color:white;
+    text-align:center;
     width:100%;
     height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     .form {
-      width:60%;
+      width:30%;
       input {
         border:none;
         outline:none;
@@ -62,21 +66,20 @@ const admin = styled(({className})=>{
       }
       input[type="submit"] {
         color:${({theme})=>theme.colors.primary};
-        box-shadow:0 2px 10px rgba(0,0,0,.4);
+        box-shadow:0 2px 10px rgba(0,0,0,.25);
         transition:.2s;
       }
       input[type="submit"]:hover {
-        background:${({theme})=>theme.colors.primary};
-        color:${({theme})=>theme.colors.white};
-        box-shadow:0 2px 10px rgba(0,0,0,.4);
+        box-shadow:0 2px 10px rgba(0,0,0,.15);
       }
       input[type="submit"]:active {
-        color:${({theme})=>theme.colors.primary};
+        background:${({theme})=>theme.colors.primary};
+        color:${({theme})=>theme.colors.white};
         box-shadow:none;
       }
       input::placeholder {color:#ccc;}
       .errorMessage {
-        color:#cc0000;
+        color:#ffcc00;
         font-size:.8em;
       }
     }
@@ -88,13 +91,17 @@ const admin = styled(({className})=>{
   }
   
   @media (max-width:600px){
-    .form {
-      width:100%;
-      height:50vh;
-      display:flex;
-      flex-flow:column nowrap;
-      align-items:center;
-      justify-content: center;
+    .login{
+      .form {
+        width:70vw;
+        // display:flex;
+        // flex-flow:column nowrap;
+        // align-items:center;
+        // justify-content: center;
+        h2{
+          margin-bottom:20px;
+        }
+      }
     }
   }
 

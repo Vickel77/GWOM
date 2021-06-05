@@ -50,7 +50,7 @@ const Footer = styled(({className})=>{
   .footer-container {
     width:80%;
     margin: 0 auto;
-    padding:50px 0;
+    padding:35px 0;
     display:flex;
     justify-content: space-around;
     align-items:center;
@@ -68,7 +68,7 @@ const Footer = styled(({className})=>{
     width:100%;
     text-align:center;
     position:absolute;
-    bottom:5px;
+    bottom:0;
     opacity:.5;
   }
   @media (max-width:600px){

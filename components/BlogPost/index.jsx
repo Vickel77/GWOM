@@ -66,9 +66,8 @@ const BlogPost = styled(({className, title, body, postButton, handleRoute, delet
   .post{
     .post-title {
       width:100%;
-      padding: 15px 20px 10px; 
+      padding: 15px 20px 0px; 
       position:relative;
-      margin-bottom:30px;
     }
 
     .post-snippet {
