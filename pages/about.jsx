@@ -5,18 +5,17 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 const CoreValue = styled(({className, text})=>{
   return (
-    <div className={className}>
-      <p>{text}</p>
-    </div>
+      <div className={className}>
+        <p>{text}</p>
+      </div>
   )
 })`
   background:${({theme})=>theme.colors.primary};
   width:30%;
+  padding:0px 10px;
   min-width:200px;
-  padding:10px;
   color:${({theme})=>theme.colors.white};
-  border-radius:15px 0 15px 0;
-  border:1px solid ${({theme})=>theme.colors.primary};
+  border-radius:15px 0 15px 0;  
   box-shadow:0 1px 5px rgba(0,0,0,.2);
   display:flex;
   justify-content:center;
@@ -34,11 +33,11 @@ const About = styled(({className})=>{
         <AltHeader title="ABOUT" />
         <div className="about">
           <div className="about-img">
-            <img width="450px" src="about-img.jpg" alt="about image of great women on a mission" />
+            <img width="350px" src="about-img.jpg" alt="about image of great women on a mission" />
           </div>
           <div className="about-text">
             Great women on the mission is a Non-Governmental Organization made up of respectful, responsible adn compassionate
-            stewwards ever ready to meet needs of less priviledged youn girls and women through philantropic services amon many others.<br/> <br/>
+            stewwards ever ready to meet needs of less priviledged youn girls and women through philantropic services amon many others.<br/>
             We are a group of people who through consistencyy, creativity, quick problem solving adn ideation, will ensyre that the girl
             child is given adequate representation adn treatment in every sphere of life.
           </div>
@@ -46,22 +45,16 @@ const About = styled(({className})=>{
         <div className="core-values">
           <h2 className="founder-story-header">CORE VALUES</h2>
           <div className="core-values-wrap">
-            <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
               <CoreValue 
                 text="We are respectful, responsible and compassionate stewards ever ready to meet needs."
               />
-            </ScrollAnimation>
-            <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
               <CoreValue 
                 text="We promote honesty, integrity and openness in all that we do."
               />
-            </ScrollAnimation>
-            <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
               <CoreValue 
                 text="We further encourage creativity, quick problem solving and ideation to meet ever arising
                 challenges and, we foster an environment of collaboration."
               />
-            </ScrollAnimation>
           </div>
         </div>
         <div className="founder-story-wrap">
@@ -108,16 +101,20 @@ const About = styled(({className})=>{
   line-height:1.5;
   .about {
     width:80%;
-    margin: 100px auto 0;
+    margin:50px auto 0;
+    display:flex;
+    flex-flow:row wrap;
+    align-items:center;
+    justify-content:space-between;
     .about-text {
+      width:60%;
       line-height:2em;
       word-spacing:.2em;
       word-break:break-word;
       text-align:justify;
     }
     .about-img {
-      float:left;
-      padding-right:10px;
+      position:relative;
       img {
         border-radius:10px;
       }
@@ -127,13 +124,13 @@ const About = styled(({className})=>{
   .core-values {
     background: ${({theme})=>theme.background};
     width:100%;
-    padding: 100px 0;
+    padding:100px 0;
     .core-values-wrap {
       width:80%;
-      margin:50px auto 0;
+      margin:30px auto 0;
       display:flex;
       flex-flow:row wrap;
-      justify-content:space-around;
+      justify-content:space-between;
     }
   }
 
@@ -144,52 +141,61 @@ const About = styled(({className})=>{
   }
   .founder-story-wrap {
     box-shadow:0 2px 10px rgba(0,0,0,.2);
-    width:90%;
+    border-radius:10px;
+    width:80%;
     margin:0 auto;
     margin-top:50px;
     padding:50px 0px;
   }
   .founder-story {
     display:flex;
-    flex-flow:row wrap;
+    flex-flow:column nowrap;
     justify-content:space-around;
     align-items:center;
     
   }
   .founder-story-img {
-    background: url('founder.jpg') no-repeat;
-    background-size:cover;
-    border-radius: 50%;
     width:300px;
     height:300px;
     min-width:200px;
-    align-self:flex-start;
+    background: url('founder.jpg') no-repeat;
+    background-size:cover;
+    border-radius: 50%;
+    margin:10px 0;
   }
   .founder-story-text {
-    width:65%;
+    width:90%;
     line-height:2em;
     word-spacing:.2em;
     word-break:break-word;
     text-align:justify;
   }
   .about-img {
+    
     border-radius:50%;
   }
 
   @media (max-width:600px){
     .about {
       width:90%;
+      flex-flow:column;
+      .about-text {
+        width:100%;
+      }
     }
     .about-img{
-      float:none;
       padding:0;
-      margin-bottom:30px;
+      margin-bottom:10px;
       img {width:100%;}
     }
-    .core-values-wrap {
-      width:100%;
-      margin:0;
+    .core-values {
+      padding:50px 0;
+      .core-values-wrap {
+        width:100%;
+        margin:0;
+      }
     }
+
     .founder-story-wrap  {
       width:90%;
       padding:50px 10px;

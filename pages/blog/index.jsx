@@ -19,15 +19,11 @@ const Blog = styled(({ className }) => {
       .get("https://polar-peak-99687.herokuapp.com/blog")
       .then(({ data }) => {
         setBlogPost(data);
-        console.log("data", data);
         setLoading(false)
       })
       .catch((error) => console.log(error));
   }, []);
-  const reduceString = (body) => {
-    let newArray = body.split("", 100).concat("...");
-      return newArray;
-  }
+
   const handleRoute =(id)=>{
     router.push(`/blog/details?${id}`, undefined, {
       shallow: true,

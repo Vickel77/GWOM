@@ -40,7 +40,7 @@ justify-content:space-between;
   left:0;
   width:15px;
   height:2px;
-  transition:.5s;
+  transition:.3s;
 }
 
 `
