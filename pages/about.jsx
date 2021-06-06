@@ -37,9 +37,9 @@ const About = styled(({className})=>{
           </div>
           <div className="about-text">
             Great women on the mission is a Non-Governmental Organization made up of respectful, responsible adn compassionate
-            stewwards ever ready to meet needs of less priviledged youn girls and women through philantropic services amon many others.<br/>
-            We are a group of people who through consistencyy, creativity, quick problem solving adn ideation, will ensyre that the girl
-            child is given adequate representation adn treatment in every sphere of life.
+            stewards ever ready to meet needs of less priviledged young girls and women through philantropic services among many others.<br/>
+            We are a group of people who through consistency, creativity, quick problem solving and ideation, will ensure that the girl
+            child is given adequate representation and treatment in every sphere of life.
           </div>
         </div>
         <div className="core-values">
@@ -65,9 +65,9 @@ const About = styled(({className})=>{
             <div className="founder-story-text">
               <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
                 <p>
-                <b>Mrs Gloria Okoroigwe</b> who despite the odds accompannied with coming from a very humble background,
-                  by grace and committment to possibilities of a great future has risen to become a woman of repute and today posits her
-                  life to placate her <b>GREAT WOMEN ON A MISSION</b> humanitarian establishment.<br />
+                <b>Mrs Gloria Okoroigwe</b> who despite the odds accompanied with coming from a very humble background, 
+                  by grace and commitment to possibilities of a great future has risen to become a woman of repute and today 
+                  posits her life to placate the ills of the girl child/women through her <b>GREAT WOMEN ON A MISSION</b> humanitarian establishment<br />
                   It looked like the drizzle turned into a rain right about the time she finished her Primary
                   Education and coming to the harsh reality that there would not be enough to further her
                   Education, even to the Secondary Level, she went ahead to serve as a Maid for several years.
