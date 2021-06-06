@@ -9,6 +9,7 @@ import {AuthContext} from "../../context/Auth"
 
 const BackOffice = styled(({className})=>{
   const [blogPost, setBlogPost] = useState([]);
+  const [image, setImage] = useState("");
   const [loading, setLoading] = useState(true)
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -40,22 +41,24 @@ const BackOffice = styled(({className})=>{
     axios.all([
       await axios.post("https://polar-peak-99687.herokuapp.com/blog/createPost", data)
         .then(result=> {console.log(result)
-          showSuccess("Article posted successfully")
+          // showSuccess("Article posted successfully")
           setLoading(true);
         })
         .catch(error=> {console.log(error)
           showError("Article submit, not successful")  
         }),
-        // IMAGE POST REQUEST
-      // await axios.post("https://polar-peak-99687.herokuapp.com/blog/add-image", image)
-      //   .then(result=> {console.log(result)
-      //     showSuccess("image uploaded successfully")
-      //   })
-      //   .catch(error=> {console.log(error)
-      //     showError("image upload, not successful")  
-      //   }),
-
+      
     ])
+    // if (image) {
+    //   await axios.post("https://polar-peak-99687.herokuapp.com/blog/add-image", image)
+    //     .then(result=> {console.log(result)
+    //       showSuccess("image uploaded successfully")
+    //     })
+    //     .catch(error=> {console.log(error)
+    //       showError("image upload, not successful")  
+    //   })
+
+    // }
     e.target.reset();
     
   }
@@ -89,8 +92,8 @@ const BackOffice = styled(({className})=>{
             <label htmlFor="body">Article</label>
             <textarea onChange={(e)=>setBody(e.target.value)} name="body" placeholder="Enter Blog article here" id="" cols="30" rows="10"></textarea>
             {/* <label htmlFor="body">Add image (PNG)</label>
-            <input type="file" name="image" id="" onChange={handleChange} required /> */}
-            <input type="submit" value="SUBMIT" />
+            <input type="file" onChange={(e)=>setImage(e.target.value)} name="image" id="" />
+            <input type="submit"  value="SUBMIT" /> */}
           </form>
         </div>
         <div className="posts">
