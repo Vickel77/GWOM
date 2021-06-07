@@ -6,6 +6,7 @@ import BlogPost from "../BlogPost"
 
 const RecentBlogPosts = styled(({className})=>{
   const [blogPost, setBlogPost] = useState([]);
+  const [blogError, setBlogError] = useState(false)
   const [loading, setLoading] = useState(true);
   useEffect(async () => {
     await axios
@@ -13,8 +14,12 @@ const RecentBlogPosts = styled(({className})=>{
       .then(({ data }) => {
         setBlogPost(data);
         setLoading(false);
+        setBlogError(false)
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setBlogError(true)
+        console.log(error)
+      });
   }, [loading]);
   const reduceString = (body) => {
     let newArray = body.split("", 200).concat("...");
@@ -25,14 +30,20 @@ const RecentBlogPosts = styled(({className})=>{
       <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
         <h2 className="blog-header">RECENT BLOG POSTS</h2>
       </ScrollAnimation>
-      {loading && <h3 align="center">loading...</h3>}
-      {blogPost && 
-        blogPost.slice(0, 3).map((post, idx)=>{
-         return (
-          <BlogPost key={idx} title={post.title} body={reduceString(post.body)} />
-         )
-        })
-      }
+      { 
+        blogError ?
+          <p style={{textAlign:"center",opacity:"0.5", fontSize:".8em"}}>
+            unable to load blog posts<br/>
+            Please check your connection and try again
+          </p> : 
+          loading ? "loading Posts..." :
+          blogPost && 
+            blogPost.map((post, idx)=>{
+              return (
+                <BlogPost key={idx} title={post.title} deletePost={()=>handleDelete(post._id)} body={reduceString(post.body)} />
+              )
+            })
+        }
     </div>
   )
 })`

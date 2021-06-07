@@ -11,6 +11,7 @@ import BlogPost from "../../components/BlogPost";
 const Blog = styled(({ className }) => {
   const [blogPost, setBlogPost] = useState([]);
   const [loading, setLoading] = useState(true)
+  const [blogError, setBlogError] = useState(false)
   const [postId, setPostId] = useState();
   const router = useRouter();
   useEffect(async () => {
@@ -20,8 +21,12 @@ const Blog = styled(({ className }) => {
       .then(({ data }) => {
         setBlogPost(data);
         setLoading(false)
+        setBlogError(false);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setBlogError(true);
+        console.log(error)
+      });
   }, []);
 
   const handleRoute =(id)=>{
@@ -38,22 +43,24 @@ const Blog = styled(({ className }) => {
         <div className={className}>
           <AltHeader title="GWOM BLOG" />
           <div className="posts">
-              <h3 align="center">
-                {
-                  loading && "loading Posts..."
-                }
-              </h3>
-              {blogPost &&
-                blogPost.map(({ _id, title, body }, idx) => {
-                  return (
-                      <BlogPost 
-                        key={_id}
-                        id={_id} 
-                        title={title} 
-                        postButton
-                        handleRoute={()=>handleRoute(_id)} />
-                  )
-                })}
+            { 
+              blogError ?
+                <p style={{textAlign:"center",opacity:"0.5", fontSize:".8em"}}>
+                  unable to load blog posts<br/>
+                  Please check your connection and try again
+                </p> : 
+                loading ? "loading Posts..." :
+                blogPost && 
+                  blogPost.map((post, idx)=>{
+                    return (
+                      <BlogPost key={_id}
+                      id={_id} 
+                      title={title} 
+                      postButton
+                      handleRoute={()=>handleRoute(_id)} />
+                    )
+                  })
+            }
           </div> 
         </div>
       </Layout>

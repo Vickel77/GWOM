@@ -81,8 +81,8 @@ const About = styled(({className})=>{
                   even without said level of education and registered for a brief training to aid her adequately
                   prepare for the examinations.<br />
                   It would seem as though the examinations were the beginning of her good fortune for, after
-                  passing the GCE, she went on to apply to study in the University of Calabar where she graduated
-                  with a degree in… (insert what her degree was in here)
+                  passing the GCE, she went on to apply to study in the University of Calabar and upon graduation furthered
+                  her studies to becoming a medical personnel. 
                   One would say that after graduating from University, she could to some extent thrive on
                   her own. However, the Heavens would prove they were not done with her when a church
                   member and fellow grew affectionate toward her and presented her to her son; the son she
@@ -99,6 +99,7 @@ const About = styled(({className})=>{
   margin-bottom:100px;
   color:${({theme})=>theme.colors.primary};
   line-height:1.5;
+  text-align:center;
   .about {
     width:80%;
     margin:50px auto 0;
@@ -159,6 +160,7 @@ const About = styled(({className})=>{
     height:300px;
     min-width:200px;
     background: url('founder.jpg') no-repeat;
+    background-position:50% 50%;
     background-size:cover;
     border-radius: 50%;
     margin:10px 0;

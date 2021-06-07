@@ -28,11 +28,11 @@ const Partner = styled(({className})=>{
           <div className="partner-form">
             <form action="#" method="GET" onSubmit={handleMail}>
               <label htmlFor="name">NAME</label>
-              <input type="text" name="name" placeholder="Name" required/>
+              <input type="text" name="name" placeholder="James" required/>
               <label htmlFor="email">EMAIL</label>
-              <input type="text" name="email" placeholder="email" required/>
+              <input type="text" name="email" placeholder="james@gmail.com" required/>
               <label htmlFor="phone">PHONE</label>
-              <input type="number" htmlFor="phone" name="phone" placeholder="Phone number" required/>
+              <input type="number" htmlFor="phone" name="phone" placeholder="0802233..." required/>
               <label htmlFor="name">REASON FOR BECOMING A PARTNER?</label>
               <textarea name="reason" id="" cols="30" rows="10"></textarea>
               <input type="submit" value="SUBMIT" />
