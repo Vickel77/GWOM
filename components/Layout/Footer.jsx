@@ -30,7 +30,8 @@ const Footer = styled(({className})=>{
         </div>
         <div className="contact">
           <h2>CONTACT US</h2>
-          <h3>+234 803 7023 385</h3>
+          <h3>LOCAL: +234 806 3529 030</h3>
+          <h3>USA: +13464810389</h3>
           <h3>greatwomenmission@gmail.com</h3>
         </div>
       </div>

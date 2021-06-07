@@ -2,6 +2,7 @@
 # init
 /components/zion
 /components/AdminForm
+/components/Blog
 # blog admin (work in progress)
 
 /pages/blog/admine.jsx

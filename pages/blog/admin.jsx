@@ -33,7 +33,7 @@ const admin = styled(({className})=>{
           <form action="" className="form" onSubmit={handleLogin}>
             <h2>ADMIN LOGIN</h2>
             {
-              errorMessage && <p className="errorMessage">The detials you entered were incorrect, please try again</p>
+              errorMessage && <p className="errorMessage">The details you entered were incorrect, please try again</p>
             }
             <input type="email" name="email" placeholder="email" onChange={(e)=>setEmail(e.target.value)} required /> <br/>
             <input type="password" name="password" id="" placeholder="password" onChange={(e)=>setPassword(e.target.value)} required /> <br/>

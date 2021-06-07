@@ -9,6 +9,7 @@ import {AuthContext} from "../../context/Auth"
 
 const BackOffice = styled(({className})=>{
   const [blogPost, setBlogPost] = useState([]);
+  const [blogError, setBlogError] = useState(false);
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(true)
   const [title, setTitle] = useState("");
@@ -22,8 +23,12 @@ const BackOffice = styled(({className})=>{
         .then(({ data }) => {
           setBlogPost(data);
           setLoading(false)
+          setBlogError(false);
         })
-        .catch((error) => console.log(error)),
+        .catch((error) => {
+          setBlogError(true);
+          console.log(error)
+        }),
         // IMAGE GET REQUEST
       // await axios.get("https://polar-peak-99687.herokuapp.com/blog/image")
       //   .then(data=>console.log(data))
@@ -82,7 +87,9 @@ const BackOffice = styled(({className})=>{
           <Link href="/blog">
             <a>Return to blog</a>
           </Link>
-          <a onClick={()=>base.auth().signOut()}>Sign out</a>
+          <Link href="#">
+            <a onClick={()=>base.auth().signOut()}>Sign out</a>
+          </Link>
         </div>
         <h1>CREATE BLOG POST</h1>
         <div className="admin-form">
@@ -92,18 +99,24 @@ const BackOffice = styled(({className})=>{
             <label htmlFor="body">Article</label>
             <textarea onChange={(e)=>setBody(e.target.value)} name="body" placeholder="Enter Blog article here" id="" cols="30" rows="10"></textarea>
             {/* <label htmlFor="body">Add image (PNG)</label>
-            <input type="file" onChange={(e)=>setImage(e.target.value)} name="image" id="" />
-            <input type="submit"  value="SUBMIT" /> */}
+            <input type="file" onChange={(e)=>setImage(e.target.value)} name="image" id="" /> */}
+            <input type="submit"  value="SUBMIT" />
           </form>
         </div>
         <div className="posts">
-          {loading && <h3>Loading...</h3>}
-          {blogPost && 
-            blogPost.sort( function ( a, b ) { return b._id - a._id; } ).map((post, idx)=>{
-            return (
-              <BlogPost key={idx} title={post.title} deletePost={()=>handleDelete(post._id)} body={reduceString(post.body)} />
-            )
-            })
+        { 
+          blogError ?
+            <p style={{textAlign:"center",opacity:"0.5", fontSize:".8em"}}>
+              unable to load blog posts<br/>
+              Please check your connection and try again
+            </p> : 
+            loading ? "loading Posts..." :
+            blogPost && 
+              blogPost.map((post, idx)=>{
+                return (
+                  <BlogPost key={idx} title={post.title} deletePost={()=>handleDelete(post._id)} body={reduceString(post.body)} />
+                )
+              })
           }
         </div>
       </div>
