@@ -33,6 +33,17 @@ const Footer = styled(({className})=>{
           <h3>LOCAL: +234 806 3529 030</h3>
           <h3>USA: +13464810389</h3>
           <h3>greatwomenmission@gmail.com</h3>
+          <div className="social-icons">
+            <a href="">
+              <img src="fb-icon.png" height="30px" alt="great women facebook account" />
+            </a>
+            <a href="https://www.instagram.com/greatwomenmission/">
+              <img src="ig-icon.png" height="30px" alt="great women instagram account" />
+            </a>
+            <a href="">
+              <img src="youtube-icon.png" height="30px" alt="great women youtube account" />
+            </a>
+          </div>
         </div>
       </div>
       <div className="copyright">
@@ -46,12 +57,12 @@ const Footer = styled(({className})=>{
   background: ${({theme})=>theme.colors.primary};
   background-size:cover;
   color:white;
-  line-height:2;
   position:relative;
   .footer-container {
     width:80%;
     margin: 0 auto;
-    padding:35px 0;
+    padding:35px 0 20px;
+    line-height:2;
     display:flex;
     justify-content: space-around;
     align-items:center;
@@ -64,6 +75,16 @@ const Footer = styled(({className})=>{
   }
   .nav-item a, .nav-item a:visited, .nav-item a:hover {
     color:white;
+  }
+  .social-icons {
+    width:60%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    a:hover {
+      transition:.3s;
+      opacity:.5;
+    }
   }
   .copyright {
     width:100%;

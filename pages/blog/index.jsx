@@ -51,7 +51,7 @@ const Blog = styled(({ className }) => {
                 </p> : 
                 loading ? "loading Posts..." :
                 blogPost && 
-                  blogPost.map((post, idx)=>{
+                  blogPost.map(({title, _id})=>{
                     return (
                       <BlogPost key={_id}
                       id={_id} 
@@ -69,6 +69,7 @@ const Blog = styled(({ className }) => {
 })`
   & {
     .posts {
+      text-align:center;
       margin: 50px auto;
       color: ${({ theme }) => theme.colors.primary};
       ${BlogPost} {
