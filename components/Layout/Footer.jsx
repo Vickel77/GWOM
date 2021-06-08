@@ -34,14 +34,14 @@ const Footer = styled(({className})=>{
           <h3>USA: +13464810389</h3>
           <h3>greatwomenmission@gmail.com</h3>
           <div className="social-icons">
-            <a href="">
-              <img src="fb-icon.png" height="30px" alt="great women facebook account" />
+            <a href="https://web.facebook.com/profile.php?id=100069146621518">
+              <img src="fb-icon.png" height="20px" alt="great women facebook account" />
             </a>
             <a href="https://www.instagram.com/greatwomenmission/">
-              <img src="ig-icon.png" height="30px" alt="great women instagram account" />
+              <img src="ig-icon.png" height="20px" alt="great women instagram account" />
             </a>
-            <a href="">
-              <img src="youtube-icon.png" height="30px" alt="great women youtube account" />
+            <a href="https://www.youtube.com/channel/UCq9n3pO8k7gvEPsATZrphsA/featured">
+              <img src="youtube-icon.png" height="20px" alt="great women youtube account" />
             </a>
           </div>
         </div>
@@ -77,10 +77,14 @@ const Footer = styled(({className})=>{
     color:white;
   }
   .social-icons {
-    width:60%;
+    width:55%;
     display:flex;
+    margin-top:10px;
     align-items:center;
     justify-content:space-between;
+    a {
+      filter:drop-shadow(0,0,5,rgba(0,0,0,.4));
+    }
     a:hover {
       transition:.3s;
       opacity:.5;
