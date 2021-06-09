@@ -89,6 +89,13 @@ const BlogPost = styled(({className, title, body, postButton, handleRoute, delet
 
   @media (max-width:600px){
     width:90%;
+    .post{
+      .post-title {
+        font-size:.8em;
+        width:100%;
+        padding: 15px 20px 0px; 
+        position:relative;
+      }
   }
 `
 

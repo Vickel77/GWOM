@@ -35,8 +35,8 @@ function MyApp({ Component, pageProps }) {
       <GlobalStyles />
       <Head>
         <title>GWOM</title>
-        <meta name="description" content="Great women on Mission" />
-        <link rel="icon" href="/logo.png" />
+        <meta name="description" content="Great women on Mission is a Non-Governmental Organization, here to meet the needs of less priviledge young girls" />
+        <link rel="icon" href="logo.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"/>
