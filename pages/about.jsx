@@ -36,7 +36,7 @@ const About = styled(({className})=>{
             <img width="350px" src="about-img.jpg" alt="about image of great women on a mission" />
           </div>
           <div className="about-text">
-            Great women on the mission is a Non-Governmental Organization made up of respectful, responsible adn compassionate
+            Great women on the mission is a Non-Governmental Organization made up of respectful, responsible and compassionate
             stewards ever ready to meet needs of less priviledged young girls and women through philantropic services among many others.<br/>
             We are a group of people who through consistency, creativity, quick problem solving and ideation, will ensure that the girl
             child is given adequate representation and treatment in every sphere of life.
@@ -65,28 +65,12 @@ const About = styled(({className})=>{
             <div className="founder-story-text">
               <ScrollAnimation animateOnce={true} duration={0.6} animateIn="fadeIn">
                 <p>
-                <b>Mrs Gloria Okoroigwe</b> who despite the odds accompanied with coming from a very humble background, 
-                  by grace and commitment to possibilities of a great future has risen to become a woman of repute and today 
-                  posits her life to placate the ills of the girl child/women through her <b>GREAT WOMEN ON A MISSION</b> humanitarian establishment<br />
-                  It looked like the drizzle turned into a rain right about the time she finished her Primary
-                  Education and coming to the harsh reality that there would not be enough to further her
-                  Education, even to the Secondary Level, she went ahead to serve as a Maid for several years.
-                  And, when that did not churn out the expected results, she took her shots with what little she had
-                  and went to Lagos, hoping and believing that greener pastures would avail themselves.
-                  However, her greener pastures didn’t present themselves by way of a classy job
-                  undeserved or a golden fleece. Her greener pastures presented themselves to her in form of a
-                  friend who took her burdens upon her. Not long after, this friend advised her to sit for the then
-                  General Certification Examinations (GCE). Reluctant to do so due to a lack of Secondary
-                  Education, she eventually obliged having been informed that the examinations could be written
-                  even without said level of education and registered for a brief training to aid her adequately
-                  prepare for the examinations.<br />
-                  It would seem as though the examinations were the beginning of her good fortune for, after
-                  passing the GCE, she went on to apply to study in the University of Calabar and upon graduation furthered
-                  her studies to becoming a medical personnel. 
-                  One would say that after graduating from University, she could to some extent thrive on
-                  her own. However, the Heavens would prove they were not done with her when a church
-                  member and fellow grew affectionate toward her and presented her to her son; the son she
-                  eventually married and joined overseas and as they say, the story goes on…
+                  Born and raised in Nigeria (the most populated black nation on earth), <b>Mrs Gloria Okoroigwe</b> who
+                  despite the odds accompanied with coming from a very humble background, by grace and sheer commitment to
+                  possibilities of a great future has risen to become a woman of repute and today posits her life of placate
+                  the ills of the girl child and women in general through her <b>GREAT WOMEN ON A MISSION</b> humanitarian establishment. <br />
+                  Her passion for the girl child and women in general was inspired by the believe that with the right kind of leverage & help,
+                  the girl child can rise to her full potential of becoming an impact to the society.
                 </p>
               </ScrollAnimation>
             </div>
@@ -97,7 +81,7 @@ const About = styled(({className})=>{
   )
 })`
   margin-bottom:100px;
-  color:${({theme})=>theme.colors.primary};
+  color:${({theme})=>theme.colors.primaryText};
   line-height:1.5;
   text-align:center;
   .about {

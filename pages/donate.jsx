@@ -50,7 +50,7 @@ const Donate = styled(({className})=>{
   )
 })`
   margin-bottom:100px;
-  color:${({theme})=>theme.colors.primary};
+  color:${({theme})=>theme.colors.primaryText};
   text-align:center;
   .paypal {
     width:60%;

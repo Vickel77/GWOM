@@ -15,12 +15,12 @@ const Button = styled(({className, label}) => {
   transition:.3s;
   &:hover {
     background: ${({theme})=>theme.colors.white};
-    color: ${({theme})=>theme.colors.primary};
+    color: ${({theme})=>theme.colors.primaryText};
     cursor:pointer;
   }
   ${({white, theme})=> white &&`
     background: ${theme.colors.white};
-    color: ${theme.colors.primary};
+    color: ${theme.colors.primaryText};
     &:hover {
       background: ${theme.colors.primary};
       color: ${theme.colors.white};
@@ -29,8 +29,8 @@ const Button = styled(({className, label}) => {
 
   ${({outline, theme})=> outline &&`
     background: transparent;
-    border: 1px solid ${theme.colors.primary};
-    color: ${theme.colors.primary};
+    border: 1px solid ${theme.colors.primaryText};
+    color: ${theme.colors.primaryText};
     &:hover {
       border: 1px solid ${theme.colors.white};
       background: ${theme.colors.primary};
@@ -45,7 +45,7 @@ const Button = styled(({className, label}) => {
     &:hover {
       border: 1px solid ${theme.colors.white};
       background: ${theme.colors.white};
-      color: ${theme.colors.primary};
+      color: ${theme.colors.primaryText};
     }
   `}
 
