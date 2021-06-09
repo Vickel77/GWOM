@@ -11,13 +11,11 @@ const Details = styled(({className, id})=>{
   const [blogPost, setBlogPost] = useState([]);
   const [loading, setLoading] = useState(true)
   const ID = Object.keys(router.query)
-  console.log("query param", Object.keys(router.query));
   useEffect(async () => {
     await axios
       .get(`https://polar-peak-99687.herokuapp.com/blog/${ID}`)
       .then(({ data }) => {
         setBlogPost(data);
-        console.log("details", data);
         setLoading(false)
       })
       .catch((error) => console.log(error));
@@ -26,10 +24,10 @@ const Details = styled(({className, id})=>{
   return(
     <Layout>
       <div className={className}>
-        <AltHeader title="GWOM BLOG" />
+        <AltHeader title={blogPost.title} />
           <div className="post">
             {loading ? <p>loading...</p> :
-              <BlogPost title={blogPost.title} body={blogPost.body} postButton="remove"/>
+              <BlogPost body={blogPost.body} postButton="remove"/>
             }
           </div>
       </div>
@@ -38,6 +36,9 @@ const Details = styled(({className, id})=>{
 })`
 color:${({theme})=>theme.colors.primary};
 text-align:center;
+${AltHeader} {
+  font-family:raleway;
+}
 .post {
   margin:25px 0;
 }

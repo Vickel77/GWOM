@@ -30,11 +30,8 @@ const About = styled(({className})=>{
   return(
     <Layout>
       <div className={className}>
-        <AltHeader title="ABOUT" />
+        <AltHeader title="ABOUT" bgImage="about-img.jpg" />
         <div className="about">
-          <div className="about-img">
-            <img width="350px" src="about-img.jpg" alt="about image of great women on a mission" />
-          </div>
           <div className="about-text">
             Great women on the mission is a Non-Governmental Organization made up of respectful, responsible and compassionate
             stewards ever ready to meet needs of less priviledged young girls and women through philantropic services among many others.<br/>

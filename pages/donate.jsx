@@ -36,7 +36,7 @@ const Donate = styled(({className})=>{
   return(
     <Layout>
       <div className={className}>
-        <AltHeader title="DONATE" />
+        <AltHeader title="DONATE" bgImage="donate-bg.jpg" />
         <div className="paypal">
           <h3>Support a female child today, by making a kind donation to the Organization</h3>
           { scriptLoaded ? <PayPalButton 

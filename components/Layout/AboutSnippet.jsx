@@ -5,7 +5,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 const AboutHeader = ({letter}) =>{
   return(
-    <ScrollAnimation offset={200} animateOnce={true} duration={0.5} animateIn="fadeIn">
+    <ScrollAnimation offset={60} animateOnce={true} duration={0.5} animateIn="fadeIn">
       <h2>{letter}</h2>
     </ScrollAnimation>
   )

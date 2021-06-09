@@ -38,13 +38,13 @@ const Footer = styled(({className})=>{
           </ul>
           <div className="social-icons">
             <a href="https://web.facebook.com/Great-Women-On-The-Mission-106654974976697/">
-              <img src="fb-icon.png" height="20px" alt="great women facebook account" />
+              <img src="../fb-icon.png" height="20px" alt="great women facebook" />
             </a>
             <a href="https://www.instagram.com/greatwomenmission/">
-              <img src="ig-icon.png" height="20px" alt="great women instagram account" />
+              <img src="../ig-icon.png" height="20px" alt="great women instagram" />
             </a>
             <a href="https://www.youtube.com/channel/UCq9n3pO8k7gvEPsATZrphsA/featured">
-              <img src="youtube-icon.png" height="20px" alt="great women youtube account" />
+              <img src="../youtube-icon.png" height="20px" alt="great women youtube" />
             </a>
           </div>
         </div>

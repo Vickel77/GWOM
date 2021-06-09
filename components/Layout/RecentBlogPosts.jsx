@@ -40,7 +40,7 @@ const RecentBlogPosts = styled(({className})=>{
           blogPost && 
             blogPost.map((post, idx)=>{
               return (
-                <BlogPost key={idx} title={post.title} deletePost={()=>handleDelete(post._id)} body={reduceString(post.body)} />
+                <BlogPost key={idx} title={post.title} body={reduceString(post.body)} />
               )
             })
         }

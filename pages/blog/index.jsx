@@ -40,7 +40,7 @@ const Blog = styled(({ className }) => {
     <>
       <Layout>
         <div className={className}>
-          <AltHeader title="GWOM BLOG" bgImage="blog-bg1.jpg"/>
+          <AltHeader title="GWOM BLOG" bgImage="../blog-bg1.jpg"/>
           <div className="posts">
             { 
               blogError ?
