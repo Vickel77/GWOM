@@ -14,15 +14,21 @@ const AltHeader = styled(({className, title, subTitle})=>{
   )
 })`
 width:100vw;
-height:30vh;
+height:50vh;
 color:${({theme})=>theme.colors.white};
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:${({bgImage, theme}) => bgImage? `url(${bgImage})`: theme.colors.primary};
+background:${({bgImage, theme}) => bgImage? `-webkit-linear-gradient(45deg, #9B4AB655, #7928B4DD) ,url(${bgImage})`: theme.colors.primary};
+background-size:cover;
+background-position:50% 50%;
+background-attachment:fixed;
+font-family:'Lobster', cursive;
+
 .title {
   font-size:2.5em;
+  font-weight:normal;
   .subTitle {
     font-weight:normal;
     font-size:0.5em;

@@ -125,7 +125,7 @@ const BackOffice = styled(({className})=>{
 width:50%;
 margin:0 auto;
 text-align:center;
-color:${({theme})=>theme.colors.primary};
+color:${({theme})=>theme.colors.primaryText};
 .return {
   width:100%;
   display:flex;
@@ -137,14 +137,14 @@ color:${({theme})=>theme.colors.primary};
   font-size:.7em;
   padding:10px;
   color:${({theme})=>theme.colors.primary};
-  border:1px solid ${({theme})=>theme.colors.primary};
+  border:1px solid ${({theme})=>theme.colors.primaryText};
 }
 .return a:active {
   background:${({theme})=>theme.colors.primary};
   color:${({theme})=>theme.colors.white};
 }
 .admin-form {
-  border:1px solid ${({theme})=>theme.colors.primary};
+  border:1px solid ${({theme})=>theme.colors.primaryText};
   margin-top: 20px;
   padding:30px 20px;
   box-shadow:0 2px 15px rgba(0,0,0,.15);
@@ -156,7 +156,7 @@ color:${({theme})=>theme.colors.primary};
     border:none;
     outline:none;
     border:1px solid ${({theme})=>theme.colors.primary};
-    color:${({theme})=>theme.colors.primary};
+    color:${({theme})=>theme.colors.primaryText};
     resize:none;
   }
   input[type="submit"] {font-weight: bold;}
@@ -168,7 +168,7 @@ color:${({theme})=>theme.colors.primary};
   }
   input::placeholder, textarea::placeholder {
     font-family:monospace;
-    color:${({theme})=>theme.colors.primary};
+    color:${({theme})=>theme.colors.primaryText};
     opacity:.5;}
   input[type="submit"]:active {
     box-shadow: 0 0px 2px rgba(0,0,0,.5);

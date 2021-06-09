@@ -44,7 +44,7 @@ const BlogPost = styled(({className, title, body, postButton, handleRoute, delet
 })`
   width:80%;
   margin:0 auto 50px;
-  color:${({theme})=>theme.colors.primary};
+  color:${({theme})=>theme.colors.primaryText};
   background:${({theme})=>theme.colors.primary};
   text-align:left;
   z-index:11;

@@ -19,11 +19,11 @@ const Partner = styled(({className})=>{
   return(
     <Layout>
       <div className={className}>
-        <AltHeader title="BECOME A PARTNER" />
+        <AltHeader title="BECOME A PARTNER" bgImage="partner-bg1.jpeg" />
         <div className="partner-wrap">
           <div className="partner-text">
           Start impacting lives massively by becoming a partner today at GWOM 
-          please fill the form below, so we can reach out you and introduce you to the rest of the family.    
+          please fill the form below, so we can reach out to you and introduce you to the rest of the family.    
           </div>
           <div className="partner-form">
             <form action="#" method="GET" onSubmit={handleMail}>
@@ -43,7 +43,7 @@ const Partner = styled(({className})=>{
     </Layout>
   )
 })`
-color:${({theme})=>theme.colors.primary};
+color:${({theme})=>theme.colors.primaryText};
 .partner-wrap {
   margin:100px auto;
   width:60%;
@@ -68,7 +68,7 @@ h1 {
     border:none;
     outline:none;
     border-radius:5px;
-    color:${({theme})=>theme.colors.primary};
+    color:${({theme})=>theme.colors.primaryText};
     resize:none;
   }
   input[type="submit"] {font-weight: bold;}
@@ -79,7 +79,7 @@ h1 {
     box-shadow: 0 2px 5px rgba(0,0,0,.5);
   }
   input::placeholder {
-    color:${({theme})=>theme.colors.primary};
+    color:${({theme})=>theme.colors.primaryText};
     opacity:.5;}
   input[type="submit"]:active {
     box-shadow: 0 0px 2px rgba(0,0,0,.5);

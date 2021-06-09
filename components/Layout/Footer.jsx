@@ -26,15 +26,18 @@ const Footer = styled(({className})=>{
             <Link href="/partner">
               PARTNER WITH US
             </Link>
-          </div>
+          </div>    
         </div>
         <div className="contact">
           <h2>CONTACT US</h2>
-          <h3>LOCAL: +234 806 3529 030</h3>
-          <h3>USA: +13464810389</h3>
-          <h3>greatwomenmission@gmail.com</h3>
+          <ul>
+            <li>+234 806 3529 030</li>
+            <li>+234 803 7023 385</li>
+            <li>USA: +13464810389</li>
+            <li>greatwomenmission@gmail.com</li>
+          </ul>
           <div className="social-icons">
-            <a href="https://web.facebook.com/profile.php?id=100069146621518">
+            <a href="https://web.facebook.com/Great-Women-On-The-Mission-106654974976697/">
               <img src="fb-icon.png" height="20px" alt="great women facebook account" />
             </a>
             <a href="https://www.instagram.com/greatwomenmission/">
@@ -61,7 +64,7 @@ const Footer = styled(({className})=>{
   .footer-container {
     width:80%;
     margin: 0 auto;
-    padding:35px 0 20px;
+    padding:35px 0 10px;
     line-height:2;
     display:flex;
     justify-content: space-around;
@@ -75,6 +78,17 @@ const Footer = styled(({className})=>{
   }
   .nav-item a, .nav-item a:visited, .nav-item a:hover {
     color:white;
+  }
+  .contact {
+    ul {
+      margin:0;
+      padding:0;
+    }
+    ul li {
+      margin:0;
+      padding:0;
+      list-style-type: none;
+    }
   }
   .social-icons {
     width:55%;

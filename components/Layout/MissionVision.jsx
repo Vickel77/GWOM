@@ -56,18 +56,16 @@ const MissionVision = styled(({ className }) => {
     margin: 0 auto;
   }
 
-  .mission {
-    color: ${({ theme }) => theme.colors.primary};
-  }
+  
   .vision {
-    background-color: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.primary};
     color: white;
   }
   @media (max-width: 600px) {
     height: auto;
     .mission,
     .vision {
-      height: 50vh;
+      height: 55vh;
       min-width: 100%;
     }
   }

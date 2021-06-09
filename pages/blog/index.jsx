@@ -38,10 +38,9 @@ const Blog = styled(({ className }) => {
   const ID = !!router.query.ID || false;
   return (
     <>
-      <Head></Head>
       <Layout>
         <div className={className}>
-          <AltHeader title="GWOM BLOG" />
+          <AltHeader title="GWOM BLOG" bgImage="blog-bg1.jpg"/>
           <div className="posts">
             { 
               blogError ?

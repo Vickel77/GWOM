@@ -18,7 +18,7 @@ background-position:50% 70%;
 height:100vh;
 width:100vw;
 padding-top: 100px;
-color: ${({theme})=>theme.colors.primary};
+color: ${({theme})=>theme.colors.primaryText};
 position:relative;
 display:flex;
 align-items:center;
@@ -54,7 +54,7 @@ align-items:center;
   padding-bottom:30px;
   margin-left:60px;
   font-size:1.5em;
-  color:${({theme})=> theme.colors.primary};
+  color:${({theme})=> theme.colors.primaryText};
   position:relative;
   
 }
@@ -70,7 +70,7 @@ align-items:center;
 
 .header-title::before {
   content:"";
-  background-color:${({theme})=>theme.colors.primary};
+  background:${({theme})=>theme.colors.primaryText};
   position:absolute;
   bottom:0;
   left:0;

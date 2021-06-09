@@ -58,7 +58,7 @@ box-shadow:0 2px 5px rgba(0,0,0,.15);
   display:flex;
   justify-content:center;
   align-items:center;
-  color:${({theme})=>theme.colors.primary};
+  color:${({theme})=>theme.colors.primaryText};
   line-height:1.5em;
   word-spacing:.2em;
 }
