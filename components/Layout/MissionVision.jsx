@@ -36,8 +36,9 @@ const MissionVision = styled(({ className }) => {
   width: 100vw;
   display: flex;
   flex-flow: row wrap;
-  text-align: center;
+  text-align: justify;
   line-height: 1.7em;
+  word-spacing:.2em;
   .mission,
   .vision {
     height: 65vh;
@@ -49,6 +50,7 @@ const MissionVision = styled(({ className }) => {
   .mission h2,
   .vision h2 {
     padding-bottom: 20px;
+    text-align:center;
   }
   .mission p,
   .vision p {

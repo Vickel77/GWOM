@@ -64,7 +64,7 @@ const About = styled(({className})=>{
                 <p>
                   Born and raised in Nigeria (the most populated black nation on earth), <b>Mrs Gloria Okoroigwe</b> who
                   despite the odds accompanied with coming from a very humble background, by grace and sheer commitment to
-                  possibilities of a great future has risen to become a woman of repute and today posits her life of placate
+                  possibilities of a great future has risen to become a woman of repute and today posits her life to placate
                   the ills of the girl child and women in general through her <b>GREAT WOMEN ON A MISSION</b> humanitarian establishment. <br />
                   Her passion for the girl child and women in general was inspired by the believe that with the right kind of leverage & help,
                   the girl child can rise to her full potential of becoming an impact to the society.
@@ -84,22 +84,10 @@ const About = styled(({className})=>{
   .about {
     width:80%;
     margin:50px auto 0;
-    display:flex;
-    flex-flow:row wrap;
-    align-items:center;
-    justify-content:space-between;
     .about-text {
-      width:60%;
+      margin:0 auto;
       line-height:2em;
-      word-spacing:.2em;
-      word-break:break-word;
       text-align:justify;
-    }
-    .about-img {
-      position:relative;
-      img {
-        border-radius:10px;
-      }
     }
   }
 

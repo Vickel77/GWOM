@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import BlogPost from "../BlogPost"
 import base from "../../pages/api/base";
 import {AuthContext} from "../../context/Auth"
+import Button from "../Button";
 
 const BackOffice = styled(({className})=>{
   const [blogPost, setBlogPost] = useState([]);
@@ -100,7 +101,7 @@ const BackOffice = styled(({className})=>{
             <textarea onChange={(e)=>setBody(e.target.value)} name="body" placeholder="Enter Blog article here" id="" cols="30" rows="10"></textarea>
             {/* <label htmlFor="body">Add image (PNG)</label>
             <input type="file" onChange={(e)=>setImage(e.target.value)} name="image" id="" /> */}
-            <input type="submit"  value="SUBMIT" />
+            <Button label="SUBMIT" type="submit" />
           </form>
         </div>
         <div className="posts">
@@ -155,11 +156,11 @@ color:${({theme})=>theme.colors.primaryText};
     margin:10px 0 15px;
     border:none;
     outline:none;
-    border:1px solid ${({theme})=>theme.colors.primary};
+    border-bottom:1px solid ${({theme})=>theme.colors.primaryText};
     color:${({theme})=>theme.colors.primaryText};
     resize:none;
   }
-  input[type="submit"] {font-weight: bold;}
+  input[type="submit"] {font-weight: bold; color:${({theme})=>theme.colors.primaryText};}
   input[type="submit"]:hover {
     transition:.3s;
     background:${({theme})=>theme.colors.primary};
