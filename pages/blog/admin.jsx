@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {useState, useEffect, useContext} from "react";
 import base from "../api/base"
 import BackOffice from "../../components/BackOffice";
+import Button from "../../components/Button";
 
 const admin = styled(({className})=>{
   const [user, setUser] = useState("")
@@ -37,7 +38,7 @@ const admin = styled(({className})=>{
             }
             <input type="email" name="email" placeholder="email" onChange={(e)=>setEmail(e.target.value)} required /> <br/>
             <input type="password" name="password" id="" placeholder="password" onChange={(e)=>setPassword(e.target.value)} required /> <br/>
-            <input type="submit" />
+            <Button label="SUBMIT" type="submit"/>
           </form> 
         </div> : 
        <>

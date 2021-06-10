@@ -4,12 +4,13 @@ import {Layout} from "../components/Layout"
 import AltHeader from "../components/AltHeader/AltHeader";
 import { PayPalButton } from "react-paypal-button-v2";
 import useSnackbar from "../hooks/useSnackBar";
+import Cookies from 'universal-cookie';
 
 const Donate = styled(({className})=>{
   const {showSuccess, showError} = useSnackbar
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const addPaypalScript =(details, data) =>{
-    console.log(details);
+    console.log("details", details);
     if(window.paypal){
       setScriptLoaded(true)
       return;
@@ -22,8 +23,13 @@ const Donate = styled(({className})=>{
     script.async = true;
     document.body.appendChild(script);
   }
+  const cookies = new Cookies();
+  // cookies.set("payment-option", "paypal", {path:".paypal.com/",secure:true, sameSite:"none"})
   useEffect(()=>{
     addPaypalScript();
+    document.cookie = "SameSite=none; Secure"
+    console.log("cookie", document.cookie)
+    
   },[])
 
   const onSuccess = (details, data)=>{

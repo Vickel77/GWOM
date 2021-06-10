@@ -53,6 +53,7 @@ const AboutSnippet = styled(({className})=>{
     justify-content:space-around;
     align-items:center;
     padding:30px 0;
+    
   }
   .about-left h2 {
     font-size:2em;
@@ -65,11 +66,13 @@ const AboutSnippet = styled(({className})=>{
     display:flex;
     justify-content:center;
     align-items:center;
+    
   }
   .about-text {
     width:80%;
     margin: 0 auto;
-    line-height:1.5;
+    line-height:2em;
+    word-spacing:.5em;
   }
 
 

@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>GWOM</title>
         <meta name="description" content="Great women on Mission is a Non-Governmental Organization, here to meet the needs of less priviledge young girls" />
-        <link rel="icon" href="logo.png" />
+        <link rel="icon" href="favicon.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"/>
@@ -50,4 +50,5 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
+// http://mouauhotspot.com/login?dst=http%3A%2F%2Fwww.msftconnecttest.com%2Fredirect
 export default MyApp
