@@ -23,16 +23,23 @@ const AboutSnippet = styled(({className})=>{
       </div>
       <div className="about-right">
         <ScrollAnimation animateOnce={true} duration={0.8} animateIn="fadeIn">
-          <div className="about-text">
-            <p>
-              Great women on the mission is a Non-Governmental Organization made up of respectful, responsible and compassionate
-              stewards ever ready to meet needs of less priviledged young girls and women through philanthropic services among many others.
-            </p>
-            <Link href="/about">
-              <a>
-                <Button label="SEE MORE" />
-              </a>
-            </Link>
+          <div className="right-content">
+            <div className="founder">
+              <img width="300px" src="founder.jpg" alt="founder's image" /><br />
+              <b>Mrs Gloria Okoroigwe</b><br />
+              <b>Founder</b>
+            </div>
+            <div className="about-text">
+              <p>
+                Great women on the mission is a Non-Governmental Organization made up of respectful, responsible and compassionate
+                stewards ever ready to meet needs of less priviledged young girls and women through philanthropic services among many others.
+              </p>
+              <Link href="/about">
+                <a>
+                  <Button label="SEE MORE" />
+                </a>
+              </Link>
+            </div>
           </div>
         </ScrollAnimation>
       </div>
@@ -64,13 +71,23 @@ const AboutSnippet = styled(({className})=>{
     color:${({theme})=>theme.colors.primary};
     background-color:white;
     display:flex;
-    justify-content:center;
+    flex-flow:column nowarp;
+    justify-content:space-between;
     align-items:center;
-    
+    .right-content {  
+      width:80%;
+      margin: 0 auto;
+    }
+    .founder {
+      margin-bottom:50px;
+      text-align:center;
+
+      img{
+        border-radius:50%;
+      }
+    }
   }
   .about-text {
-    width:80%;
-    margin: 0 auto;
     line-height:2em;
     word-spacing:.5em;
   }
