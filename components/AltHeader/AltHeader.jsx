@@ -25,8 +25,8 @@ background-size:cover;
 background-position:50% 50%;
 
 .title {
-  font-size:2.5em;
-  font-weight:normal;
+  font-size:3.5em;
+  font-weight:bolder;
   text-shadow:0 0 5px rgba(0,0,0,.5);
   .subTitle {
     font-weight:normal;
