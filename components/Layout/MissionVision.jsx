@@ -41,11 +41,11 @@ const MissionVision = styled(({ className }) => {
   word-spacing:.2em;
   .mission,
   .vision {
-    height: 65vh;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding:50px 0;
   }
   .mission h2,
   .vision h2 {
@@ -67,7 +67,6 @@ const MissionVision = styled(({ className }) => {
     height: auto;
     .mission,
     .vision {
-      height: 55vh;
       min-width: 100%;
     }
   }

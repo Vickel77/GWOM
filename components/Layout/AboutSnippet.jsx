@@ -25,7 +25,7 @@ const AboutSnippet = styled(({className})=>{
         <ScrollAnimation animateOnce={true} duration={0.8} animateIn="fadeIn">
           <div className="right-content">
             <div className="founder">
-              <img width="300px" src="founder.jpg" alt="founder's image" /><br />
+              <img width="250px" src="founder.jpg" alt="founder's image" /><br />
               <b>Mrs Gloria Okoroigwe</b><br />
               <b>Founder</b>
             </div>
@@ -46,7 +46,7 @@ const AboutSnippet = styled(({className})=>{
     </div>
   )
 })`
-  height:545px;
+  
   width:100vw;
   margin: 0 auto 0px;
   display:flex;
@@ -59,13 +59,13 @@ const AboutSnippet = styled(({className})=>{
     flex-flow:column nowrap;
     justify-content:space-around;
     align-items:center;
-    padding:30px 0;
-    
+    padding:50px 0;
   }
   .about-left h2 {
     font-size:2em;
   }
   .about-right {
+    padding:50px 0;
     height:inherit;
     width:82%;
     color:${({theme})=>theme.colors.primary};

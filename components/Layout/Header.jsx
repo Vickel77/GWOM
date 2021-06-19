@@ -14,7 +14,7 @@ const Header = styled(({className}) =>{
 })`
 background:url("header-bg.jpg");
 background-size:cover;
-background-position:50% 20%;
+background-position:50% 70%;
 height:100vh;
 width:100vw;
 padding-top: 100px;
