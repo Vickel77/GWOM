@@ -90,7 +90,7 @@ align-items:center;
 @media (max-width:600px){
   background:-webkit-linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.5)),url("header-bg.jpg");
   height:80vh;
-  padding-top: 300px;
+  padding-top: 100px;
   display:block;
   background-size:cover;
   background-position:50% 20%;

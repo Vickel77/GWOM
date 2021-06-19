@@ -22,13 +22,15 @@ const AboutSnippet = styled(({className})=>{
         <AboutHeader letter="T" />
       </div>
       <div className="about-right">
-        <ScrollAnimation animateOnce={true} duration={0.8} animateIn="fadeIn">
-          <div className="right-content">
+        <div className="right-content">
+          <ScrollAnimation animateOnce={true} duration={0.8} animateIn="fadeIn">
             <div className="founder">
               <img width="250px" src="founder.jpg" alt="founder's image" /><br />
               <b>Mrs Gloria Okoroigwe</b><br />
               <b>Founder</b>
             </div>
+          </ScrollAnimation>
+          <ScrollAnimation animateOnce={true} duration={0.8} animateIn="fadeIn">
             <div className="about-text">
               <p>
                 Great women on the mission is a Non-Governmental Organization made up of respectful, responsible and compassionate
@@ -40,8 +42,8 @@ const AboutSnippet = styled(({className})=>{
                 </a>
               </Link>
             </div>
-          </div>
-        </ScrollAnimation>
+          </ScrollAnimation>
+        </div>
       </div>
     </div>
   )

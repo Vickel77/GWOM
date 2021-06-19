@@ -23,7 +23,6 @@ text-align:center;
 background:${({bgImage, theme}) => bgImage? `-webkit-linear-gradient(45deg, #9B4AB655, #7928B4DD) ,url(${bgImage})`: theme.colors.primary};
 background-size:cover;
 background-position:50% 50%;
-font-family:'Lobster', cursive;
 
 .title {
   font-size:2.5em;
