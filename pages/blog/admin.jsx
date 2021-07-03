@@ -20,7 +20,8 @@ const admin = styled(({className})=>{
       base.auth().onAuthStateChanged(setHasAccount)
       setErrorMessage(false)
       } catch (error){
-        console.log(error);
+        console.log("firebase error",error);
+        console.log("api-key", process.env.API_KEY) 
         setErrorMessage(true)
       }
 
